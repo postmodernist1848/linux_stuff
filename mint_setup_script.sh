@@ -32,7 +32,7 @@ sed -i 's/wifi.powersave = 3/wifi.powersave = 2/' /etc/NetworkManager/conf.d/def
 
 echo "2/$total_ops_count: updating all packages."
 apt update -qq
-apt-get upgrade -y | tail -1
+apt-get upgrade -y > /dev/null
 
 echo "3/$total_ops_count: installing git."
 apt-get install git -y > /dev/null
@@ -92,7 +92,7 @@ echo "9/$total_ops_count: copying pictures for desktop background."
 su $user -c "cp -r desktop_background /home/$user/Pictures/" 
 
 echo "10/$total_ops_count: adding grub background picture."
-su $user -c "cp ameer-basheer-gV6taBJuBTk-unsplash.jpg /boot/grub"
+cp ameer-basheer-gV6taBJuBTk-unsplash.jpg /boot/grub
 update-grub 2> /dev/null
 
 echo "11/$total_ops_count: installing extensions and desklets."
@@ -123,7 +123,7 @@ if [ ! -e /home/$user/.local/share/cinnamon/desklets/simple-system-monitor@ariel
 fi
 
 #Removing unzipped archives.
-if [ -e *.zip ]; then
+if ls *.zip &> /dev/null; then
     rm *.zip
 fi
 
@@ -132,7 +132,7 @@ apt-get install vim -y > /dev/null
 su $user -c "cp .vimrc /home/$user"
 
 echo "13/$total_ops_count: importing settings for gnome terminal."
-su $user -c "dconf load /org/gnome/terminal/ < gnome_terminal_settings_backup.txt"
+dconf load /org/gnome/terminal/ < gnome_terminal_settings_backup.txt
 
 echo "14/$total_ops_count: installing pyglet."
 su $user -c "pip install pyglet | tail -1" 
