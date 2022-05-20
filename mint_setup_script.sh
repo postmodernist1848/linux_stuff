@@ -141,13 +141,14 @@ apt-get install htop -y > /dev/null
 echo "15/$total_ops_count: copying desktop files."
 su $user -c "cp -r Desktop/ /home/$user"
 
-echo "16/$total_ops_count: installing i3wm and urxvt."
-apt-get install i3wm rxvt-unicode -y > /dev/null
+echo "16/$total_ops_count: installing i3, urxvt, feh, rofi, compton, fonts-mplus, xsettingsd and lxappearance."
+apt-get install i3 rxvt-unicode feh rofi compton fonts-mplus xsettingsd lxappearance -y > /dev/null
 
 echo "17/$total_ops_count: copying config files to home directory."
 for f in .bashrc .vimrc .Xresources .xsettingsd do
 su $user -c "cp $f ~"
 done
 su $user -c "cp -r .config ~"
+echo "18/$total_ops_count: opening lxappearance."
 
 echo "Configuration finished. Now copy files from external disk."
