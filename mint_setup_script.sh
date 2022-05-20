@@ -9,13 +9,9 @@ Only run this after configuring the following:
 
 #### STUFF THAT THIS SCRIPT DOES NOT DO ####
 After the the successful execution of this script, the user (me) is advised to:
-1. Add another layout and change the switch shortcut to alt + shift.
-2. Add Flameshot shortcut and disable system PrtSc shortcut.
-3. Change desktop background to /home/$user/Pictures/desktop_background and enable slideshow with random ordering.
-4. Configure menu (import menu_settings.json file from linux_stuff folder in the applet configurations menu.)
 5. Log into Firefox and sync.
 6. Install discord (flatpak) from software manager.
-7. Add the installed system monitor desklet and two installed extensions.
+
 ' 
 
 
@@ -88,13 +84,10 @@ apt-get install flameshot -y > /dev/null
 echo "Openning Flameshot config to enable launch on startup and disable prompt."
 su $user -c "flameshot config" 
 
-echo "9/$total_ops_count: copying pictures for desktop background."
-su $user -c "cp -r desktop_background /home/$user/Pictures/" 
-
-echo "10/$total_ops_count: adding grub background picture."
+echo "9/$total_ops_count: adding grub background picture."
 cp ameer-basheer-gV6taBJuBTk-unsplash.jpg /boot/grub
 update-grub 2> /dev/null
-
+: '
 echo "11/$total_ops_count: installing extensions and desklets."
 
 if [ ! -e /home/$user/.local/share/cinnamon/extensions ]; then
@@ -126,28 +119,38 @@ fi
 if ls *.zip &> /dev/null; then
     rm *.zip
 fi
-
-echo "12/$total_ops_count: installing vim and copying .vimrc."
+'
+echo "10/$total_ops_count: installing vim and copying .vimrc."
 apt-get install vim -y > /dev/null
-su $user -c "cp .vimrc /home/$user"
 
-echo "13/$total_ops_count: importing settings for gnome terminal."
-dconf load /org/gnome/terminal/ < gnome_terminal_settings_backup.txt
+#echo "12/$total_ops_count: importing settings for gnome terminal."
+#dconf load /org/gnome/terminal/ < gnome_terminal_settings_backup.txt
 
-echo "14/$total_ops_count: installing pyglet."
+echo "11/$total_ops_count: installing pyglet."
 su $user -c "pip install pyglet | tail -1" 
 
-echo "15/$total_ops_count: installing Steam."
+echo "12/$total_ops_count: installing Steam."
 apt-get install steam -y > /dev/null
 
-echo "16/$total_ops_count: installing GIMP."
+echo "13/$total_ops_count: installing GIMP."
 apt-get install gimp -y > /dev/null
 
-echo "17/$total_ops_count: installing htop."
+echo "14/$total_ops_count: installing htop."
 apt-get install htop -y > /dev/null
 
-echo "18/$total_ops_count: copying desktop files."
+echo "15/$total_ops_count: copying desktop files."
 su $user -c "cp -r Desktop/ /home/$user"
+
+echo "16/$total_ops_count: installing i3wm and urxvt."
+apt-get install i3wm rxvt-unicode -y > /dev/null
+
+echo "17/$total_ops_count: copying config files to home directory."
+for f in .bashrc .vimrc .Xresources .xsettingsd do
+su $user -c "cp $f ~"
+done
+su $user -c "cp .config ~"
+
+
 
 
 
