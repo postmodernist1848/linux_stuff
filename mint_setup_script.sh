@@ -150,3 +150,4 @@ su $user -c "cp $f ~"
 done
 su $user -c "cp -r .config ~"
 
+echo "Configuration finished. Now copy files from external disk."
