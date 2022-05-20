@@ -148,9 +148,5 @@ echo "17/$total_ops_count: copying config files to home directory."
 for f in .bashrc .vimrc .Xresources .xsettingsd do
 su $user -c "cp $f ~"
 done
-su $user -c "cp .config ~"
-
-
-
-
+su $user -c "cp -r .config ~"
 
