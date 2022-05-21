@@ -147,8 +147,8 @@ client.background           #2f343f
 
 
 exec --no-startup-id flameshot
-exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant  ,winkeys -option grp:alt_shift_toggle"
+exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant  ,winkeys -option grp:alt_shift_toggle"
 
-exec "/usr/bin/setxkbmap -option 'caps:ctrl_modifier'"
-exec "/usr/bin/xcape -e 'Caps_Lock=Escape' -t 100"
+exec_always "/usr/bin/setxkbmap -option 'caps:ctrl_modifier'"
+exec_always "/usr/bin/xcape -e 'Caps_Lock=Escape' -t 100"
 
