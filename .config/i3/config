@@ -11,7 +11,7 @@ floating_modifier $super
 #autostart
 exec --no-startup-id "feh --bg-fill --randomize  ~/Pictures/desktop_background/*"
 exec --no-startup-id xsettingsd &
-exec --no-startup-id compton -b
+exec --no-startup-id compton
 exec --no-startup-id nm-applet
 # start a terminal
 bindsym $super+Return exec urxvt
@@ -147,8 +147,8 @@ client.background           #2f343f
 
 
 exec --no-startup-id flameshot
-exec "setxkbmap -model pc105 -layout us,ru -variant  ,winkeys -option grp:alt_shift_toggle"
+exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant  ,winkeys -option grp:alt_shift_toggle"
 
-exec /usr/bin/setxkbmap -option 'caps:ctrl_modifier'
-exec /usr/bin/xcape -e 'Caps_Lock=Escape' -t 100
+exec "/usr/bin/setxkbmap -option 'caps:ctrl_modifier'"
+exec "/usr/bin/xcape -e 'Caps_Lock=Escape' -t 100"
 
