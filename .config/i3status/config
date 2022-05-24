@@ -7,7 +7,7 @@ general {
 		color_degraded = '#ebcb8b'
 		color_bad = '#ba5e57'
 }
-
+order += "memory"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "disk /"
@@ -18,8 +18,15 @@ order += "volume master"
 order += "battery all"
 order += "tztime local"
 
-load {
-        format = "<span background='#f59335'>  %usage </span>"
+memory {
+		separator = false
+        format = "<span background='#f59335'>  %used </span>"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+cpu_usage {
+        format = "<span background='#f59335'>  %usage </span>"
 }
 
 cpu_temperature 0 {

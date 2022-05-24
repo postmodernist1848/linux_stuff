@@ -105,12 +105,12 @@ mode "resize" {
         bindsym k resize grow height 5 px or 5 ppt
         bindsym l resize shrink height 5 px or 5 ppt
         bindsym semicolon resize grow width 5 px or 5 ppt
-        bindsym Return mode "default"
+        bindsym $super+r mode "default"
 }
 bindsym $super+r mode "resize"
 
 # panel
-bar {
+bar {	
         colors {
         background #2f343f
         statusline #2f343f
@@ -146,9 +146,17 @@ client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.background           #2f343f
 
 
+#Warm colors mode
+bindsym $super+KP_Add exec redshift -O 3700
+bindsym $super+KP_Subtract exec redshift -x
+
+#Change brightness level
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+
 exec --no-startup-id flameshot
-exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant  ,winkeys -option grp:alt_shift_toggle"
 
-exec_always "/usr/bin/setxkbmap -option 'caps:ctrl_modifier'"
-exec_always "/usr/bin/xcape -e 'Caps_Lock=Escape' -t 100"
+exec_always  --no-startup-id /usr/bin/setxkbmap -option 'caps:ctrl_modifier'
+exec_always --no-startup-id /usr/bin/xcape -e 'Caps_Lock=Escape' -t 100
 
+exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
