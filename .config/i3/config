@@ -28,8 +28,8 @@ bindsym Print exec flameshot gui
 
 bindsym $super+Shift+Escape exec i3lock -i /home/postmodernist1488/Pictures/desktop_background/daniel-leone-v7daTKlZzaw-unsplash.png
 
-bindsym $super+b exec firefox;workspace 2; focus
-bindsym $super+Shift+f exec nemo;workspace 3; focus
+bindsym $super+b exec firefox
+bindsym $super+Shift+f exec nemo
 bindsym $super+c exec code
 
 #change volume
@@ -111,7 +111,7 @@ bindsym $super+r mode "resize"
 
 # panel
 bar {	
-        colors {
+		colors {
         background #2f343f
         statusline #2f343f
         separator #4b5262
@@ -132,9 +132,10 @@ assign [class=firefox] 2
 assign [class=Nemo] 3
 assign [class=Geany|Evince|Gucharmap|Soffice|libreoffice*] 4
 assign [class=Audacity|Vlc|mpv|Ghb|Xfburn|Gimp*|Inkscape] 5
+assign [class=Spotify] 5
 assign [class=Lxappearance|System-config-printer.py|Lxtask|GParted|Pavucontrol|Exo-helper*|Lxrandr|Arandr] 6
 for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
-for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
+for_window [class=URxvt|firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity|Nemo|Spotify] focus
 for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
 
 # colour of border, background, text, indicator, and child_border
@@ -154,9 +155,12 @@ bindsym $super+KP_Subtract exec redshift -x
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
-exec --no-startup-id flameshot
+# turn touchpad on/off
+bindsym XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh devonoff
+bindsym Shift+XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh taponoff
 
-exec_always  --no-startup-id /usr/bin/setxkbmap -option 'caps:ctrl_modifier'
-exec_always --no-startup-id /usr/bin/xcape -e 'Caps_Lock=Escape' -t 100
+exec --no-startup-id flameshot
+exec --no-startup-id /usr/bin/setxkbmap -option 'caps:ctrl_modifier'
+exec --no-startup-id /usr/bin/xcape -e 'Caps_Lock=Escape' -t 500 
 
 exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:alt_shift_toggle"

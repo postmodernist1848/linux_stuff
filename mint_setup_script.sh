@@ -104,8 +104,8 @@ apt-get install gimp -y > /dev/null
 echo "14/$total_ops_count: installing htop."
 apt-get install htop -y > /dev/null
 
-echo "15/$total_ops_count: installing i3, urxvt, feh, rofi, compton, fonts-mplus, xsettingsd and lxappearance."
-apt-get install i3 rxvt-unicode feh rofi compton fonts-mplus xsettingsd lxappearance -y > /dev/null
+echo "15/$total_ops_count: installing i3, urxvt, feh, rofi, compton, fonts-mplus, xsettingsd, lxappearance and xcape."
+apt-get install i3 rxvt-unicode feh rofi compton fonts-mplus xsettingsd lxappearance xcape -y > /dev/null
 
 echo "16/$total_ops_count: copying config files to home directory."
 for f in .bashrc .vimrc .Xresources .xsettingsd 
@@ -113,7 +113,7 @@ do
 su $user -c "cp -v $f ~"
 done
 su $user -c "cp -rv .config ~"
-cp -v resize-font /usr/lib/x86_64-linux-gnu/urxvt/perl/
+su $user -c "cp -v .urxvt ~"
 
 echo "17/$total_ops_count: installing Iosevka font and icomoon."
 if [ $(fc-list | grep -i "Iosevka Term" | wc -l) -eq 0 ]; then
