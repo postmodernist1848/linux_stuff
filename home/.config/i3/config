@@ -3,34 +3,33 @@ set $super Mod4
 set $alt Mod1
 
 # set font
-font pango: Iosevka 10
+font pango: Noto Sans 10
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 
 #autostart
-exec --no-startup-id "feh --bg-fill --randomize  ~/Pictures/desktop_background/*"
-exec --no-startup-id xsettingsd &
+exec_always --no-startup-id "feh --bg-fill --randomize  ~/Pictures/desktop_background/*"
 exec --no-startup-id compton
 exec --no-startup-id nm-applet
 # start a terminal
-bindsym $super+Return exec urxvt
+bindsym $super+Return exec --no-startup-id alacritty
 
 # start dmenu (a program launcher)
-bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
+bindsym $super+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
 bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
 
 #hide edge borders for the only window in the workspace
 hide_edge_borders smart
 
 # common apps keybinds
-bindsym Print exec flameshot gui
+bindsym Print exec --no-startup-id flameshot gui
 
-bindsym $super+Shift+Escape exec i3lock -i /home/postmodernist1488/Pictures/desktop_background/daniel-leone-v7daTKlZzaw-unsplash.png
+bindsym $super+Shift+Escape exec --no-startup-id i3lock -i /home/postmodernist1488/Pictures/desktop_background/daniel-leone-v7daTKlZzaw-unsplash.png
 
 bindsym $super+b exec firefox
 bindsym $super+Shift+f exec nemo
-bindsym $super+c exec code
+bindsym $super+c exec --no-startup-id code
 
 #change volume
 # Use pactl to adjust volume in PulseAudio.
@@ -148,19 +147,20 @@ client.background           #2f343f
 
 
 #Warm colors mode
-bindsym $super+KP_Add exec redshift -O 3700
-bindsym $super+KP_Subtract exec redshift -x
+bindsym $super+KP_Add exec --no-startup-id redshift -O 3700
+bindsym $super+KP_Subtract exec --no-startup-id redshift -x
 
 #Change brightness level
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
-
 # turn touchpad on/off
+# turn off touchpad on startup
+exec --no-startup-id xinput --disable $(xinput list --id-only "ELAN1200:00 04F3:30BA Touchpad")
 bindsym XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh devonoff
 bindsym Shift+XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh taponoff
 
 exec --no-startup-id flameshot
-exec --no-startup-id /usr/bin/setxkbmap -option 'caps:ctrl_modifier'
-exec --no-startup-id /usr/bin/xcape -e 'Caps_Lock=Escape' -t 500 
 
 exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
+exec_always --no-startup-id "bash -c 'sleep 8; xmodmap ~/.Xmodmap'" 
+exec_always --no-startup-id sudo systemctl restart battery-charge-threshold.service
