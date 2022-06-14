@@ -1,10 +1,10 @@
 #!/bin/bash
     
-# This bash script is used to backup a user's home directory to /tmp/.
+# This bash script is used to backup essential directories from user's home directory to $HOME/backup.
     
 function backup {
 	user=$1   
-    output=/tmp/${user}_home_$(date +%Y-%m-%d_%H%M%S).tar.gz
+    [ $user -eq root ] && output=/$user/${user}_home_$(date +%Y-%m-%d_%H%M%S).tar.gz || output=/home/$user/${user}_home_$(date +%Y-%m-%d_%H%M%S).tar.gz
     
     function total_files {
     	find $1 -type f | wc -l
@@ -21,8 +21,8 @@ function backup {
     function total_archived_files {
     	tar -tzf $1 | grep -v /$ | wc -l
     }
-    
-    directories_to_archive=(/home/$user/Documents /home/$user/Downloads /home/$user/Pictures /home/$user/Desktop /home/$user/Music /home/$user/Videos)
+    [ $user -eq root ] && directories_to_archive=(/$user/Documents /$user/Downloads /$user/Pictures /$user/Desktop /$user/Music /$user/Videos) ||
+        directories_to_archive=(/home/$user/Documents /home/$user/Downloads /home/$user/Pictures /home/$user/Desktop /home/$user/Music /home/$user/Videos)
 
     tar -czf $output ${directories_to_archive[@]};
 
@@ -45,7 +45,7 @@ function backup {
     
     echo "Backup of $input completed!"
     echo "Details about the output backup file:"
-    ls -l $output
+    ls -lh --color=auto $output
 
 }
 
