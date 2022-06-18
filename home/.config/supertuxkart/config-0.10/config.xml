@@ -35,16 +35,16 @@
         numkarts="4"
         numlaps="4"
         ffa-time-limit="3"
-        use-ffa-mode="false"
+        use-ffa-mode="true"
         numgoals="5"
         soccer-default-team="1"
         soccer-time-limit="20"
         soccer-use-time-limit="true"
-        random-arena-item="false"
-        difficulty="2"
+        random-arena-item="true"
+        difficulty="1"
         game_mode="3"
-        soccer-red-ai-num="4"
-        soccer-blue-ai-num="3"
+        soccer-red-ai-num="0"
+        soccer-blue-ai-num="6"
         karts-powerup-gui="false"
         soccer-player-list="false"
         addon-tux-online="false"
@@ -55,7 +55,7 @@
     <kart value="tux" />
 
     <!-- Last selected kart group -->
-    <last_kart_group value="standard" />
+    <last_kart_group value="all" />
 
     <!-- Settings for the wiimote
              wiimote-raw-max : At what raw input value maximum steering is reached (between 1 and 25).
@@ -241,10 +241,10 @@
     <num-karts-per-gamemode>
         <gamemode-list gamemode="0" num-karts="4"/>
         <gamemode-list gamemode="1002" num-karts="5"/>
-        <gamemode-list gamemode="1100" num-karts="4"/>
+        <gamemode-list gamemode="1100" num-karts="8"/>
         <gamemode-list gamemode="1101" num-karts="4"/>
-        <gamemode-list gamemode="2000" num-karts="6"/>
-        <gamemode-list gamemode="2001" num-karts="4"/>
+        <gamemode-list gamemode="2000" num-karts="10"/>
+        <gamemode-list gamemode="2001" num-karts="10"/>
         <gamemode-list gamemode="2003" num-karts="8"/>
     </num-karts-per-gamemode>
 
@@ -384,7 +384,7 @@ moving the mouse (means acceleration).
     <item_style value="items" />
 
     <!-- Name of the last track used. -->
-    <last_track value="olivermath" />
+    <last_track value="random_track" />
 
     <!-- Last selected track group -->
     <last_track_group value="all" />
@@ -442,12 +442,12 @@ moving the mouse (means acceleration).
              addon_last_updated : Time addon-list was updated last.
              latest_addon_time : Latest approved addon time. -->
     <AddonServer
-        news_last_updated="1654671906"
+        news_last_updated="1655309657"
         news_frequency="0"
         news_display_count=""
         last_important_message_id="-1"
-        addon_last_updated="1654671908"
-        latest_addon_time="1654365661"
+        addon_last_updated="1655309428"
+        latest_addon_time="1655052145"
     >
     </AddonServer>
 

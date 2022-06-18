@@ -129,11 +129,10 @@ for_window [class=".*"] border pixel 1
 #assign [class=URxvt] 1
 assign [class=firefox] 2
 assign [class=Nemo] 3
-assign [class=Geany|Evince|Gucharmap|Soffice|libreoffice*] 4
+assign [class=Geany|Gucharmap|Soffice|libreoffice*] 4
 assign [class=Audacity|Vlc|mpv|Ghb|Xfburn|Gimp*|Inkscape] 5
-assign [class=Spotify] 5
 assign [class=Lxappearance|System-config-printer.py|Lxtask|GParted|Pavucontrol|Exo-helper*|Lxrandr|Arandr] 6
-for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
+for_window [class=Viewnior|feh|Sxiv|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
 for_window [class=URxvt|firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity|Nemo|Spotify] focus
 for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
 
@@ -151,10 +150,11 @@ bindsym $super+KP_Add exec --no-startup-id redshift -O 3700
 bindsym $super+KP_Subtract exec --no-startup-id redshift -x
 
 #Change brightness level
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightnessctl s 10%-
+
 # turn touchpad on/off
-# turn off touchpad on startup
+# disable touchpad on startup
 exec --no-startup-id xinput --disable $(xinput list --id-only "ELAN1200:00 04F3:30BA Touchpad")
 bindsym XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh devonoff
 bindsym Shift+XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh taponoff

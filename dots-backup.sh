@@ -16,11 +16,10 @@ echo "Copying dotfiles to home directory"
 cp -vr ./home/. ~
 
 echo "Changing root's dotfiles to symlinks"
-sudo su -s 'files_to_link=( .bashrc .vimrc .config/alacritty .config/compton .config/dunst .config/i3 .config/i3status );
-
-for f in files_to_link; do
-    ln -svf "~/$f" "/root/$f"; 
-done'
+files_to_link=( .bashrc .vimrc .config/alacritty .config/compton .config/dunst .config/i3 .config/i3status )
+for f in ${files_to_link[@]}; do
+    sudo ln -svf "$HOME/$f" "/root/$f" 
+done
 }
 case $# in
     0)

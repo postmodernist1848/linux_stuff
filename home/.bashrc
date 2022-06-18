@@ -110,11 +110,7 @@ fi
 }
 
 #A fix for error reporting in mupdf
-alias mupdf='mupdf-silent'
-
-mupdf-silent() {
-mupdf "$@" 2> /dev/null &
-}
+alias mupdf='mupdfs(){ mupdf $@ 2> /dev/null; }; mupdfs'
 
 #LFS variable for building and maintaining Linux From Scratch
 LFS=/mnt/lfs

@@ -4,6 +4,7 @@ set shiftwidth=4
 set tabstop=4
 set mouse=a
 set autoindent
+set softtabstop=4
 
 filetype plugin indent on 
 set encoding=utf-8 
@@ -48,6 +49,8 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
+" Copy to clipboard with Ctrl-c or Ctrl-shift-c
+vnoremap <C-S-C> "+y<Esc>
 
 function! AirlineInit()
   let g:airline_section_x = airline#section#create_right(['bookmark', 'tagbar', 'vista', 'gutentags', 'gen_tags', 'omnisharp', 'grepper', 'filetype'])

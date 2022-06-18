@@ -65,6 +65,8 @@
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/colortexturedquad.vert
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/colortexturedquad.frag
 [info   ] irr_driver: GLSL supported.
+[info   ] SDLController: Xbox 360 Controller plugged in: buttons: 11, axes: 6, hats: 1.
+[info   ] SDLController: Xbox 360 Controller uses game controller mapping X360 Controller.
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/sp_pass.vert
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/sp_solid.frag
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/sp_shadow.vert
@@ -99,13 +101,10 @@
 [warn   ] SPMeshBuffer: kartDirt shader is missing, fallback to solid
 [warn   ] SPMeshBuffer: kartDirt shader is missing, fallback to solid
 [warn   ] SPMeshBuffer: kartDirt shader is missing, fallback to solid
-[info   ] addons: Downloading updated addons.xml.
-[info   ] HTTPRequest: Downloading https://online.supertuxkart.net/dl/xml/online_assets.xml
 [warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
 [info   ] Achievements: Synching achievement 2,3,5,7,8,9 to server.
 [info   ] HTTPRequest: Sending userid=369602&token=************************&achievementid=2%2C3%2C5%2C7%2C8%2C9 to https://online.supertuxkart.net/api/v2/user/achieving/
-[info   ] HTTPRequest: Sending userid=369602&token=************************&visitingid=369602 to https://online.supertuxkart.net/api/v2/user/get-friends-list/
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] addons: Using cached addons.xml.
 [verbose  ] RaceManager: Nb of karts=1, ghost karts:0 ai:0 players:1
 
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/tracks/overworld/splatting.frag
@@ -119,239 +118,116 @@
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/pointlight.frag
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/combine_diffuse_color.frag
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/tonemap.frag
+[info   ] HTTPRequest: Sending userid=369602&token=************************&visitingid=369602 to https://online.supertuxkart.net/api/v2/user/get-friends-list/
 [info   ] Track: Overall scene complexity estimated at 106
-[info   ] Script: allchallenges: unlocked_challenges=17, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=17, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=17, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=17, challenges=26
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/importance_sampling_specular.frag
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/sky.vert
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/sky.frag
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/sp_text_billboard.frag
 [info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/shaders/passthrough.frag
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[verbose  ] RaceManager: Nb of karts=8, ghost karts:0 ai:7 players:1
-
-[info   ] Track: Overall scene complexity estimated at 193
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[warn   ] Scripting preprocessing: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/library/stklib_monkeyCheering_a/scripting.as:28: warning: End of input with no newline, supplemented newline
-[info   ] Track: Overall scene complexity estimated at 1721
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
 [info   ] Singleton: Destroyed singleton.
 [info   ] Singleton: Destroyed singleton.
 [verbose  ] RaceManager: Nb of karts=1, ghost karts:0 ai:0 players:1
 
-[info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/tracks/overworld/splatting.frag
-[info   ] Track: Overall scene complexity estimated at 106
-[info   ] Script: allchallenges: unlocked_challenges=17, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=17, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=17, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=17, challenges=26
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[info   ] Script: onForceFieldKartCollision
-[warn   ] SFXManager: Throttling sfx - queue size 41
-[warn   ] SFXManager: Throttling sfx - queue size 41
-[warn   ] SFXManager: Throttling sfx - queue size 41
-[warn   ] SFXManager: Throttling sfx - queue size 41
-[warn   ] SFXManager: Throttling sfx - queue size 41
+[info   ] Track: Overall scene complexity estimated at 73
+[info   ] Script: onStart(): start Driving Tutorial
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] Script: tutorial_bananas(Kart 0): Triggered
+[info   ] Script: tutorial_giftboxes(Kart 0): Triggered
+[info   ] Script: tutorial_backgiftboxes(Kart 0): Triggered
+[info   ] Script: tutorial_discard(Kart 0): Discarded a Message
+[info   ] Script: tutorial_nitro_collect(Kart 0): Triggered
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] Script: tutorial_discard(Kart 0): Discarded a Message
+[info   ] Script: tutorial_nitro_use(Kart 0): Triggered
+[info   ] Script: tutorial_discard(Kart 0): Discarded a Message
+[info   ] Script: tutorial_rescue(Kart 0): Triggered
+[info   ] Script: tutorial_discard(Kart 0): Discarded a Message
+[info   ] Script: tutorial_skidding(Kart 0): Triggered
+[info   ] Script: tutorial_skidding2(Kart 0): Triggered
+[info   ] Script: tutorial_discard(Kart 0): Discarded a Message
+[info   ] Script: tutorial_endmessage(Kart 0): Triggered
+[info   ] Script: tutorial_exit(Kart 0): Tutorial quitted
 [info   ] Singleton: Destroyed singleton.
 [info   ] Singleton: Destroyed singleton.
-[verbose  ] RaceManager: Nb of karts=8, ghost karts:0 ai:7 players:1
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget target-type-spinner of type 1 has no dimensions
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget target-type-text of type 5 has no dimensions
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget ai-blue-spinner of type 1 has no dimensions
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget ai-blue-text of type 5 has no dimensions
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget target-type-spinner of type 1 has no dimensions
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget target-type-text of type 5 has no dimensions
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget ai-blue-spinner of type 1 has no dimensions
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget ai-blue-text of type 5 has no dimensions
+[verbose  ] RaceManager: Nb of karts=8, ghost karts:0 ai:6 players:2
 
-[info   ] Track: Overall scene complexity estimated at 193
+[info   ] Track: Overall scene complexity estimated at 352
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[warn   ] Scripting preprocessing: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/library/stklib_monkeyCheering_a/scripting.as:28: warning: End of input with no newline, supplemented newline
-[info   ] Track: Overall scene complexity estimated at 1721
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[info   ] Track: Overall scene complexity estimated at 156
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
 [info   ] Singleton: Destroyed singleton.
 [info   ] Singleton: Destroyed singleton.
-[info   ] Track: Overall scene complexity estimated at 1255
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[info   ] Track: Overall scene complexity estimated at 142
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[verbose  ] RaceManager: Nb of karts=0, ghost karts:0 ai:0 players:0
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget target-type-spinner of type 1 has no dimensions
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget target-type-text of type 5 has no dimensions
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget ai-blue-spinner of type 1 has no dimensions
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget ai-blue-text of type 5 has no dimensions
+[verbose  ] RaceManager: Nb of karts=8, ghost karts:0 ai:6 players:2
 
-[warn   ] Scripting preprocessing: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/library/stklib_monkeyCheering_a/scripting.as:28: warning: End of input with no newline, supplemented newline
-[info   ] Track: Overall scene complexity estimated at 172
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[verbose  ] RaceManager: Nb of karts=0, ghost karts:0 ai:0 players:0
-
-[warn   ] AnimTexture: Did not find animate texture 'seagloss.png'
-[info   ] Track: Overall scene complexity estimated at 12
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[verbose  ] RaceManager: Nb of karts=1, ghost karts:0 ai:0 players:1
-
-[info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/tracks/overworld/splatting.frag
-[info   ] Track: Overall scene complexity estimated at 106
-[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[verbose  ] RaceManager: Nb of karts=9, ghost karts:0 ai:8 players:1
-
-[info   ] Track: Overall scene complexity estimated at 58
+[info   ] Track: Overall scene complexity estimated at 103
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[info   ] Track: Overall scene complexity estimated at 4483
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[verbose  ] RaceManager: Nb of karts=1, ghost karts:0 ai:0 players:1
-
-[info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/tracks/overworld/splatting.frag
-[info   ] Track: Overall scene complexity estimated at 106
-[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
-[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
-[info   ] Singleton: Destroyed singleton.
-[info   ] Singleton: Destroyed singleton.
-[verbose  ] RaceManager: Nb of karts=9, ghost karts:0 ai:8 players:1
-
-[info   ] [FileManager]: Creating directory(ies) '/home/postmodernist1488/.cache/supertuxkart/cached-textures/hd/tracks/mines'
-[info   ] FileManager: Creating directory '/home/postmodernist1488/.cache/supertuxkart/cached-textures/hd/tracks/mines/'.
-[warn   ] SPMeshBuffer: spheremap shader is missing, fallback to solid
-[info   ] Track: Overall scene complexity estimated at 293
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
@@ -369,10 +245,124 @@
 [info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
 [info   ] Singleton: Destroyed singleton.
 [info   ] Singleton: Destroyed singleton.
+[verbose  ] RaceManager: Nb of karts=5, ghost karts:0 ai:4 players:1
+
+[info   ] Track: Overall scene complexity estimated at 643
+[info   ] Singleton: Destroyed singleton.
+[info   ] Singleton: Destroyed singleton.
+[verbose  ] RaceManager: Nb of karts=1, ghost karts:0 ai:0 players:1
+
+[info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/tracks/overworld/splatting.frag
+[info   ] Track: Overall scene complexity estimated at 106
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
+[info   ] Singleton: Destroyed singleton.
+[info   ] Singleton: Destroyed singleton.
+[verbose  ] RaceManager: Nb of karts=6, ghost karts:0 ai:5 players:1
+
+[info   ] Track: Overall scene complexity estimated at 643
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] Singleton: Destroyed singleton.
+[info   ] Singleton: Destroyed singleton.
+[verbose  ] RaceManager: Nb of karts=1, ghost karts:0 ai:0 players:1
+
+[info   ] ShaderFilesManager: Compiling shader: /home/postmodernist1488/Downloads/SuperTuxKart-1.3-linux-64bit/data/tracks/overworld/splatting.frag
+[info   ] Track: Overall scene complexity estimated at 106
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
+[info   ] Script: allchallenges: unlocked_challenges=18, challenges=26
+[info   ] Singleton: Destroyed singleton.
+[info   ] Singleton: Destroyed singleton.
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[verbose  ] RaceManager: Nb of karts=8, ghost karts:0 ai:6 players:2
+
+[info   ] Track: Overall scene complexity estimated at 23
+[info   ] [ItemManager]: Creating 11 random items for arena
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] Singleton: Destroyed singleton.
+[info   ] Singleton: Destroyed singleton.
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget ai-blue-spinner of type 1 has no dimensions
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget ai-blue-text of type 5 has no dimensions
+[verbose  ] RaceManager: Nb of karts=10, ghost karts:0 ai:8 players:2
+
+[info   ] Track: Overall scene complexity estimated at 1341
+[info   ] [ItemManager]: Creating 13 random items for arena
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[info   ] Singleton: Destroyed singleton.
+[info   ] Singleton: Destroyed singleton.
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] LayoutManager: Statically sized widgets took all the place!!
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget ai-blue-spinner of type 1 has no dimensions
+[warn   ] AbstractTopLevelContainer::addWidgetsRecursively: Widget ai-blue-text of type 5 has no dimensions
+[verbose  ] RaceManager: Nb of karts=10, ghost karts:0 ai:8 players:2
+
+[info   ] [FileManager]: Creating directory(ies) '/home/postmodernist1488/.cache/supertuxkart/cached-textures/hd/tracks/temple'
+[info   ] FileManager: Creating directory '/home/postmodernist1488/.cache/supertuxkart/cached-textures/hd/tracks/temple/'.
+[info   ] Track: Overall scene complexity estimated at 2330
+[info   ] [ItemManager]: Creating 17 random items for arena
+[warn   ] KartProperties: Can't find kart type '' for kart 'Blinky', defaulting to 'light'.
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[warn   ] RibbonWidget: All the buttons of the focused ribbon are deactivated !
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/poll/
+[info   ] Singleton: Destroyed singleton.
+[info   ] Singleton: Destroyed singleton.
+[info   ] SDLController: Xbox 360 Controller unplugged.
 [info   ] HTTPRequest: Sending userid=369602&token=************************ to https://online.supertuxkart.net/api/v2/user/client-quit/
-[verbose  ] Thread: Start waiting 1111259.654000
-[verbose  ] Thread: Waited 1.139000 seconds for thread to become deleteable.
-[verbose  ] Thread: Stop waiting 1111260.793000
+[verbose  ] Thread: Start waiting 1749825.202000
+[verbose  ] Thread: Waited 1.757000 seconds for thread to become deleteable.
+[verbose  ] Thread: Stop waiting 1749826.959000
 [info   ] Singleton: Destroyed singleton.
 [info   ] Singleton: Destroyed singleton.
 [info   ] Singleton: Destroyed singleton.

@@ -5,9 +5,9 @@ ID=$(xinput list --id-only "ELAN1200:00 04F3:30BA Touchpad")
 # get the status
 STATUS=$(xinput list-props $ID | grep "Device Enabled"|awk '{print $4}')
 # get the tap status and property ID
-TEMP=$(xinput list-props $ID | grep --max-count=1  "Tapping Enabled")
-TAP=$(echo $TEMP|awk '{print $5}')
-PROP=$(echo $TEMP|awk '{print $4}'|cut -b 2-4)
+TEMP=$(xinput list-props $ID | grep --max-count=1  "Tap Action")
+TAP=$(echo $TEMP|cut -d' ' -f 5-)
+PROP=$(echo $TEMP|cut -d' ' -f 4|cut -b 2-4)
 
 case $1 in
     devonoff)
@@ -21,12 +21,12 @@ case $1 in
         fi
     ;;
     taponoff)
-        if [ $TAP -ne 0 ]
+        if [ "$TAP" != 0 ]
         then
             xinput --set-prop $ID $PROP 0
             notify-send -u low -i input-touchpad "Tapping disabled"
         else
-            xinput --set-prop $ID $PROP 1
+            xinput --set-prop $ID $PROP 2, 3, 0, 0, 1, 3, 0
             notify-send -u low -i input-touchpad "Tapping enabled"
         fi
     ;;
