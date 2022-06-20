@@ -8,7 +8,7 @@ backup_dots() {
 # Home directory
 cp -v ~/{.bashrc,.vimrc} ./home/
 # .config directory                                         #lol super tux kart
-cp -vr ~/.config/{alacritty.yml,compton.conf,dunst,i3,i3status,supertuxkart} ./home/.config/
+cp -vr ~/.config/{alacritty.yml,compton.conf,dunst,i3,i3status,supertuxkart,.Xmodmap} ./home/.config/
 }
 
 install_dots() {
@@ -17,7 +17,7 @@ cp -vr ./home/. ~
 
 echo "Changing root's dotfiles to symlinks"
 files_to_link=( .bashrc .vimrc .config/alacritty .config/compton .config/dunst .config/i3 .config/i3status )
-for f in ${files_to_link[@]}; do
+for f in "${files_to_link[@]}"; do
     sudo ln -svf "$HOME/$f" "/root/$f" 
 done
 }
