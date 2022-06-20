@@ -9,7 +9,7 @@ font pango: Noto Sans 10
 floating_modifier $super
 
 #autostart
-exec_always --no-startup-id "feh --bg-fill --randomize  ~/Pictures/desktop_background/*"
+exec_always --no-startup-id "feh --no-fehbg --bg-fill --randomize  ~/Pictures/desktop_background/*"
 exec --no-startup-id compton
 exec --no-startup-id nm-applet
 # start a terminal
@@ -170,7 +170,7 @@ bindsym F9 exec --no-startup-id xdotool click --repeat 100000 --delay 20000 1
 bindsym F10 exec --no-startup-id killall xdotool
 
 
-exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
-exec_always --no-startup-id "bash -c 'sleep 8; xmodmap ~/.config/.Xmodmap" 
-exec_always --no-startup-id exec notify-send "i3" "i3wm has been restarted"
+exec_always --no-startup-id "setxkbmap -option caps:escape"
+exec_always --no-startup-id "xmodmap -verbose /home/postmodernist1488/.config/Xmodmap > ~/Documents/out.txt"
 exec_always --no-startup-id sudo systemctl restart battery-charge-threshold.service
+

@@ -48,7 +48,7 @@ function! InsertTabWrapper()
         return "\<Down>"
     endif
 endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <Tab> <Down>
 
 " Copy to clipboard with Ctrl-c or Ctrl-shift-c
 vmap <C-S-C> "+y<Esc>

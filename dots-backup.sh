@@ -8,7 +8,7 @@ backup_dots() {
 # Home directory
 cp -v ~/{.bashrc,.vimrc} ./home/
 # .config directory                                         #lol super tux kart
-cp -vr ~/.config/{alacritty.yml,compton.conf,dunst,i3,i3status,supertuxkart,.Xmodmap} ./home/.config/
+cp -vr ~/.config/{alacritty.yml,compton.conf,dunst,i3,i3status,supertuxkart} ./home/.config/
 }
 
 install_dots() {
