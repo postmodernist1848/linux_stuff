@@ -25,6 +25,8 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 colorscheme gruvbox
@@ -35,9 +37,8 @@ let g:Powerline_symbols='unicode'
 let g:airline#extensions#xkblayout#enabled = 0
 
 set completeopt=menuone,longest
-" Tab completion
 " will insert tab at beginning of line,
-" will use completion if not at beginning
+" will scroll completion if not at beginning
 
 function! InsertTabWrapper()
     let col = col('.') - 1
@@ -50,8 +51,21 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 " Copy to clipboard with Ctrl-c or Ctrl-shift-c
-vnoremap <C-S-C> "+y<Esc>
+vmap <C-S-C> "+y<Esc>
+nmap <F5> :w<CR>:!~/.scripts/run.sh %<CR>
 
+" Syntastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+ let g:syntastic_python_python_exec = 'python3'
+ let g:syntastic_python_checkers = ['python']
+
+" A fix for powerline fonts in airline
 function! AirlineInit()
   let g:airline_section_x = airline#section#create_right(['bookmark', 'tagbar', 'vista', 'gutentags', 'gen_tags', 'omnisharp', 'grepper', 'filetype'])
 endfunction

@@ -45,19 +45,19 @@ bindsym $super+Shift+q kill
 bindsym $alt+F4 kill
 
 # change focus
-bindsym $super+j focus left
-bindsym $super+k focus down
-bindsym $super+l focus up
-bindsym $super+semicolon focus right
+bindsym $super+h focus left
+bindsym $super+j focus down
+bindsym $super+k focus up
+bindsym $super+l focus right
 
 # move focused window
-bindsym $super+Shift+j move left
-bindsym $super+Shift+k move down
-bindsym $super+Shift+l move up
-bindsym $super+Shift+semicolon move right
+bindsym $super+Shift+h move left
+bindsym $super+Shift+j move down
+bindsym $super+Shift+k move up
+bindsym $super+Shift+l move right
 
 # split in horizontal orientation
-bindsym $super+h split h
+bindsym $super+g split h
 
 # split in vertical orientation
 bindsym $super+v split v
@@ -159,8 +159,18 @@ exec --no-startup-id xinput --disable $(xinput list --id-only "ELAN1200:00 04F3:
 bindsym XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh devonoff
 bindsym Shift+XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh taponoff
 
+# start flameshot
 exec --no-startup-id flameshot
 
+# start gnome-polkit
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+
+# Autoclicker
+bindsym F9 exec --no-startup-id xdotool click --repeat 100000 --delay 20000 1
+bindsym F10 exec --no-startup-id killall xdotool
+
+
 exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
-exec_always --no-startup-id "bash -c 'sleep 8; xmodmap ~/.Xmodmap'" 
+exec_always --no-startup-id "bash -c 'sleep 8; xmodmap ~/.config/.Xmodmap" 
+exec_always --no-startup-id exec notify-send "i3" "i3wm has been restarted"
 exec_always --no-startup-id sudo systemctl restart battery-charge-threshold.service
