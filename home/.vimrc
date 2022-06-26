@@ -3,14 +3,12 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set mouse=a
-set autoindent
 set softtabstop=4
 
-filetype plugin indent on 
+filetype plugin on
 set encoding=utf-8 
 set nocompatible 
 syntax enable
-
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -26,7 +24,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'akinsho/toggleterm.nvim', { 'tag': 'v1.*' }
 call plug#end()
+set smartindent
 
 colorscheme gruvbox
 set background=dark 
@@ -52,15 +52,20 @@ set completeopt=menuone,longest
 " will insert tab at beginning of line,
 " will scroll completion if not at beginning
 
-" Copy to clipboard with Ctrl-c or Ctrl-shift-c
+" Scroll through autocomletion with Tab
 inoremap <expr> <Tab> ((pumvisible())?("\<C-n>"):("\<Tab>"))
+" Copy to clipboard with Ctrl-c or Ctrl-shift-c
 vmap <C-S-C> "+y<Esc>
-nmap <F5> :w<CR>:!~/.scripts/run.sh %<CR>
+" run run.sh with F5
+nmap <F5> :w<CR>:!clear && ~/.scripts/run.sh %<CR>
+" Clear search highlighting
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+" Use Ex instead of Vexplorer
+cnoreabbrev Ex Vexplore
 
-" A fix for powerline fonts in airline
 function! AirlineInit()
   let g:airline_section_x = airline#section#create_right(['bookmark', 'tagbar', 'vista', 'gutentags', 'gen_tags', 'omnisharp', 'grepper', 'filetype'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
+
 

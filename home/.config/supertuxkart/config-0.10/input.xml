@@ -13,10 +13,10 @@ Event 3 : Gamepad button press
 -->
 
 <keyboard enabled="true" configName="">
-     <action name="steerLeft" event="1" id="37" character="52" />
-    <action name="steerRight" event="1" id="39" character="52" />
-    <action name="accel" event="1" id="38" character="52" />
-    <action name="brake" event="1" id="40" character="52" />
+     <action name="steerLeft" event="1" id="37" character="53" />
+    <action name="steerRight" event="1" id="39" character="53" />
+    <action name="accel" event="1" id="38" character="53" />
+    <action name="brake" event="1" id="40" character="53" />
     <action name="nitro" event="1" id="78" character="53" />
     <action name="drift" event="1" id="86" character="53" />
     <action name="rescue" event="1" id="9" character="53" />
@@ -41,6 +41,25 @@ Event 3 : Gamepad button press
     <action name="rescue" event="3" id="6" />
     <action name="fire" event="3" id="5" />
     <action name="lookBack" event="2" id="2" direction="1" range="1" />
+    <action name="pauserace" event="3" id="7" />
+    <action name="menuUp" event="2" id="1" direction="0" range="0" />
+    <action name="menuDown" event="2" id="1" direction="1" range="0" />
+    <action name="menuLeft" event="2" id="0" direction="0" range="0" />
+    <action name="menuRight" event="2" id="0" direction="1" range="0" />
+    <action name="menuSelect" event="3" id="0" />
+    <action name="menuCancel" event="3" id="1" />
+</gamepad>
+
+<gamepad name ="Xbox Gamepad (userspace driver)" deadzone="4096" desensitize="0" force-feedback="1" enabled="true" configName="">
+     <action name="steerLeft" event="2" id="0" direction="0" range="0" />
+    <action name="steerRight" event="2" id="0" direction="1" range="0" />
+    <action name="accel" event="3" id="3" />
+    <action name="brake" event="3" id="2" />
+    <action name="nitro" event="3" id="4" />
+    <action name="drift" event="3" id="5" />
+    <action name="rescue" event="3" id="6" />
+    <action name="fire" event="3" id="1" />
+    <action name="lookBack" event="3" id="0" />
     <action name="pauserace" event="3" id="7" />
     <action name="menuUp" event="2" id="1" direction="0" range="0" />
     <action name="menuDown" event="2" id="1" direction="1" range="0" />

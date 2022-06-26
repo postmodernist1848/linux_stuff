@@ -44,6 +44,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $super+Shift+q kill
 bindsym $alt+F4 kill
 
+# change focus to parent container
+bindsym $super+a focus parent
+# child container
+bindsym $super+z focus child
+
 # change focus
 bindsym $super+h focus left
 bindsym $super+j focus down
@@ -100,10 +105,10 @@ bindsym $super+Shift+x exec "i3-nagbar -t warning -m 'Really, exit?' -b 'Yes' 'i
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
         bindsym $super+r mode "default"
 }
 bindsym $super+r mode "resize"

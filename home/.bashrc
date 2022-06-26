@@ -111,7 +111,6 @@ fi
 
 #A fix for error reporting in mupdf
 alias mupdf='mupdfs(){ mupdf $@ 2> /dev/null; }; mupdfs'
-alias vim='nvim'
 
 #LFS variable for building and maintaining Linux From Scratch
 LFS=/mnt/lfs

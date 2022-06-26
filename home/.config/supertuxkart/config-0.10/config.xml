@@ -384,7 +384,7 @@ moving the mouse (means acceleration).
     <item_style value="items" />
 
     <!-- Name of the last track used. -->
-    <last_track value="random_track" />
+    <last_track value="olivermath" />
 
     <!-- Last selected track group -->
     <last_track_group value="all" />
@@ -442,11 +442,11 @@ moving the mouse (means acceleration).
              addon_last_updated : Time addon-list was updated last.
              latest_addon_time : Latest approved addon time. -->
     <AddonServer
-        news_last_updated="1655309657"
+        news_last_updated="1656012463"
         news_frequency="0"
         news_display_count=""
         last_important_message_id="-1"
-        addon_last_updated="1655309428"
+        addon_last_updated="1656012465"
         latest_addon_time="1655052145"
     >
     </AddonServer>
