@@ -17,6 +17,9 @@ VISUAL='vim'
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# bash vim mode
+#set -o vi
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
@@ -64,7 +67,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-alias i3conf='vim ~/.config/i3/config'
+alias i3c='vim ~/.config/i3/config'
 alias shut='shutdown now'
 
 
