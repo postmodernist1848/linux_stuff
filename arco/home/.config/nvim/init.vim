@@ -57,7 +57,7 @@ set completeopt=menuone,longest
 " Scroll through autocomletion with Tab
 inoremap <expr> <Tab> ((pumvisible())?("\<C-n>"):("\<Tab>"))
 " Copy to clipboard with Ctrl-c or Ctrl-shift-c
-vmap <C-S-C> "+y<Esc>
+vmap <C-c> "+y<Esc>
 " run run.sh with F5
 nmap <F5> :w<CR>:bo term ./run.sh %<CR>
 " Clear search highlighting

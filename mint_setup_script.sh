@@ -10,7 +10,6 @@ Only run this after configuring the following:
 #### STUFF THAT THIS SCRIPT DOES NOT DO ####
 After the the successful execution of this script, the user (me) is advised to:
 5. Log into Firefox and sync.
-6. Install discord (flatpak) from software manager.
 
 ' 
 
