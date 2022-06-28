@@ -29,19 +29,24 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "setting battery charge threshold."
-echo "[Unit]
+
+sudo -i
+cat > /etc/systemd/system/battery-charge-threshold.service << 'EOF'
+[Unit]
 Description=Set the battery charge threshold
 After=multi-user.target
-
 StartLimitBurst=0
+
 [Service]
 Type=oneshot
 Restart=on-failure
+ExecStart=/bin/bash -c 'echo 60 > /sys/class/power_supply/BAT0/charge_control_end_threshold'
 
-ExecStart=/bin/bash -c 'echo $charge_threshold > /sys/class/power_supply/BAT0/charge_control_end_threshold'
 [Install]
-WantedBy=multi-user.target" > /etc/systemd/system/battery-charge-threshold.service
+WantedBy=multi-user.target
+EOF
 
-systemctl enable battery-charge-threshold.service 
-systemctl start battery-charge-threshold.service
+sudo systemctl enable battery-charge-threshold.service 
+sudo systemctl start battery-charge-threshold.service
 
+exit
