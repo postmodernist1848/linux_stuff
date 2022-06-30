@@ -174,14 +174,14 @@ bindsym XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh 
 bindsym Shift+XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh taponoff
 
 # start flameshot
-# exec --no-startup-id flameshot
+exec --no-startup-id flameshot
 
 # start gnome-polkit
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Autoclicker
-bindsym F9 exec --no-startup-id xdotool click --repeat 100000 --delay 20000 1
-bindsym F10 exec --no-startup-id killall xdotool
+# bindsym F9 exec --no-startup-id xdotool click --repeat 100000 --delay 20000 1
+# bindsym F10 exec --no-startup-id killall xdotool
 
 
 exec_always --no-startup-id sudo systemctl restart battery-charge-threshold.service

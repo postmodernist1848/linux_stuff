@@ -58,14 +58,16 @@ set completeopt=menuone,longest
 inoremap <expr> <Tab> ((pumvisible())?("\<C-n>"):("\<Tab>"))
 " Copy to clipboard with Ctrl-c or Ctrl-shift-c
 vmap <C-c> "+y<Esc>
-" run run.sh with F5
-nmap <F5> :w<CR>:bo term ./run.sh %<CR>
+" run run.sh with f5
+nmap <F5> :w<CR>:split term://./run.sh % <CR>
 " Clear search highlighting
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Use Ex instead of Vexplorer
 cnoreabbrev Ex Vexplore
-" 
+" open splits at the bottom 
 set splitbelow
+" default for c
+nmap <F8> ggi#include <stdio.h><CR><CR>int main (void) {<CR><CR>return 0;<CR>}<Esc>
 
 function! AirlineInit()
   let g:airline_section_x = airline#section#create_right(['bookmark', 'tagbar', 'vista', 'gutentags', 'gen_tags', 'omnisharp', 'grepper', 'filetype'])
