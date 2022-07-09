@@ -13,7 +13,6 @@ syntax enable
 call plug#begin('~/.vim/bundle')
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-scripts/AutoComplPop'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()

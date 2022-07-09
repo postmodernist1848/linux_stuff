@@ -12,8 +12,8 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-EDITOR='vim'
-VISUAL='vim'
+EDITOR='nvim'
+VISUAL='nvim'
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -33,6 +33,8 @@ shopt -s checkwinsize
 #shopt -s globstar
    
 PS1='\[\033[01;34m\]\w\[\033[00m\]\$ \[\033[01;32m\]❯\[\033[00m\] '
+
+export PATH="$HOME/.scripts:$PATH"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -69,7 +71,8 @@ fi
 
 alias i3c='vim ~/.config/i3/config'
 alias shut='shutdown now'
-
+alias 25m='bash -c '"'"'sleep 1500; notify-send "Time is out" "Your 25 minutes have passed"'"'"' &'
+alias 5m='bash -c '"'"'sleep 300; notify-send "Time is out" "Your 5 minutes have passed"'"'"' &'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -117,11 +120,20 @@ fi
 #A fix for error reporting in mupdf
 alias mupdf='mupdfs(){ mupdf $@ 2> /dev/null; }; mupdfs'
 
+# Alias for detaching evince
+read_pdf_with_evince() {
+    if [ $1 == '-e' ]; then evince $2 & disown; exit
+    else evince $1 & disown;
+    fi
+}
+alias pdf='read_pdf_with_evince'
+alias pdfe='read_pdf_with_evince -e'
+
 #LFS variable for building and maintaining Linux From Scratch
 LFS=/mnt/lfs
 
 
-# usage: ex <file>
+# usage: ex <file> - extract any archive of a listed type
 ex ()
 {
   if [ -f $1 ] ; then

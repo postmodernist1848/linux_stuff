@@ -13,7 +13,7 @@ syntax enable
 call plug#begin('~/.vim/bundle')
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-scripts/AutoComplPop'
+"Plug 'vim-scripts/AutoComplPop'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'akinsho/toggleterm.nvim', { 'tag': 'v1.*' }
@@ -59,15 +59,16 @@ inoremap <expr> <Tab> ((pumvisible())?("\<C-n>"):("\<Tab>"))
 " Copy to clipboard with Ctrl-c or Ctrl-shift-c
 vmap <C-c> "+y<Esc>
 " run run.sh with f5
-nmap <F5> :w<CR>:split term://./run.sh % <CR>
+nmap <F5> :w<CR>:split term://run.sh % <CR>
 " Clear search highlighting
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Use Ex instead of Vexplorer
 cnoreabbrev Ex Vexplore
-" open splits at the bottom 
+" open horizontal splits at the bottom and vertical to the right
 set splitbelow
+set splitright
 " default for c
-nmap <F8> ggi#include <stdio.h><CR><CR>int main (void) {<CR><CR>return 0;<CR>}<Esc>
+nmap <F8> ggi#include <stdio.h><CR><CR>int main (int argc, char *argv[]) {<CR><CR>return 0;<CR>}<Esc>kkO
 
 function! AirlineInit()
   let g:airline_section_x = airline#section#create_right(['bookmark', 'tagbar', 'vista', 'gutentags', 'gen_tags', 'omnisharp', 'grepper', 'filetype'])

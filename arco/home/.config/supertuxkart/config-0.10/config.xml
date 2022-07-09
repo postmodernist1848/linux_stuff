@@ -55,7 +55,7 @@
     <kart value="tux" />
 
     <!-- Last selected kart group -->
-    <last_kart_group value="all" />
+    <last_kart_group value="standard" />
 
     <!-- Settings for the wiimote
              wiimote-raw-max : At what raw input value maximum steering is reached (between 1 and 25).
@@ -442,12 +442,12 @@ moving the mouse (means acceleration).
              addon_last_updated : Time addon-list was updated last.
              latest_addon_time : Latest approved addon time. -->
     <AddonServer
-        news_last_updated="1656549162"
+        news_last_updated="1657317818"
         news_frequency="0"
         news_display_count=""
         last_important_message_id="-1"
-        addon_last_updated="1656549166"
-        latest_addon_time="1655052145"
+        addon_last_updated="1657317821"
+        latest_addon_time="1656949528"
     >
     </AddonServer>
 
@@ -465,81 +465,5 @@ moving the mouse (means acceleration).
 
     <!-- Allows one to set commandline args in config file -->
     <commandline value="" />
-
-    <!-- Represents the saved state of a GP -->
-    <SavedGP
-        player_id="1"
-        gp_id="4_atworldsend"
-        race_type="1100"
-        difficulty="2"
-        player_karts="1"
-        last_track="1"
-        reverse_type="0"
-        skipped_tracks="1"
-    >
-        <Kart
-            ident="gavroche"
-            score="14"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="112.816223"
-        />
-        <Kart
-            ident="wilber"
-            score="11"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="117.072708"
-        />
-        <Kart
-            ident="beastie"
-            score="4"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="130.252457"
-        />
-        <Kart
-            ident="sara_the_racer"
-            score="8"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="117.072708"
-        />
-        <Kart
-            ident="pidgin"
-            score="3"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="156.557800"
-        />
-        <Kart
-            ident="xue"
-            score="6"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="122.214645"
-        />
-        <Kart
-            ident="adiumy"
-            score="2"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="174.742538"
-        />
-        <Kart
-            ident="konqi"
-            score="1"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="192.938705"
-        />
-        <Kart
-            ident="tux"
-            score="0"
-            local_player_id="0"
-            global_player_id="-1"
-            overall_time="471.427246"
-        />
-    </SavedGP>
 
 </stkconfig>

@@ -4,11 +4,12 @@
 backup_dots() { 
 
 [ "${PWD##*/}" = "arco" ] || { echo "Current directory is not arco" && exit 1; }
-
+mkdir -pv home/.config/nvim
+    
 # Home directory
 cp -v ~/{.bashrc,.vimrc} ./home/
 # .config directory                                         #lol super tux kart
-cp -vr ~/.config/{alacritty.yml,picom,dunst,i3,i3status,supertuxkart} home/.config/
+cp -vr ~/.config/{alacritty.yml,picom,dunst,i3,i3status,clangd,supertuxkart} home/.config/
     
 cp -v ~/.config/nvim/init.vim home/.config/nvim/
 
@@ -20,7 +21,7 @@ echo "Copying dotfiles to home directory"
 cp -vr ./home/. ~
 
 echo "Changing root's dotfiles to symlinks"
-files_to_link=( .bashrc .vimrc .config/nvim/ .config/alacritty .config/compton .config/dunst .config/i3 .config/i3status .vim )
+files_to_link=( .bashrc .vimrc .config/nvim/ .config/alacritty.yml .config/compton .config/dunst .config/i3 .config/i3status .vim .config/clangd )
 sudo rm -r /root/.vim
 for f in "${files_to_link[@]}"; do
     sudo ln -svf "$HOME/$f" "/root/$f" 

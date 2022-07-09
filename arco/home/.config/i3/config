@@ -148,7 +148,8 @@ for_window [class=URxvt|firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn
 for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
 for_window [class=Steam title="Friends List"] floating enable
 for_window [class=Steam title="Steam - News"] floating enable
-
+for_window [title="Picture-in-Picture"] sticky enable
+for_window [instance="origin.exe"] floating enable
 
 # colour of border, background, text, indicator, and child_border
 client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
@@ -164,8 +165,8 @@ bindsym $super+KP_Add exec --no-startup-id redshift -O 3700
 bindsym $super+KP_Subtract exec --no-startup-id redshift -x
 
 #Change brightness level
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo brightnessctl s +10%
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightnessctl s 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightnessctl s 5%-
 
 # turn touchpad on/off
 # disable touchpad on startup

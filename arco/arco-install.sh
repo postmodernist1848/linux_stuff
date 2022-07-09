@@ -3,11 +3,12 @@ sudo cp -v sudoers /etc/
 sudo chown root /etc/sudoers 
 echo 'you might wanna sudo rm -v /etc/sudoers.d/*'
 
-echo "updating and upgrading all packages"
+echo "updating the database and upgrading all packages"
 sudo pacman -Syu
 
-echo "installing software with pacman"
-sudo pacman -S flameshot picom nemo discord clang redshift tlp
+echo "installing additional software with pacman"
+sudo pacman -S flameshot picom nemo discord clang redshift tlp \
+gvim neovim python-pip mpv brightnessctl
 
 echo "installing dotfiles."
 ./dots-backup.sh --install
@@ -22,7 +23,7 @@ echo "configuring git"
 git config --global user.email "elitic.pantheism@gmail.com"
 git config --global user.name "postmodernist1488"
 
-echo "installing node"
+echo "installing node (for coc-nvim)"
 
 curl -sL install-node.vercel.app/lts | sudo bash
 
