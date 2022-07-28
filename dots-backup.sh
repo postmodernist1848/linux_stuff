@@ -9,8 +9,8 @@ mkdir -pv home/.config/nvim
 # Home directory
 cp -v ~/{.bashrc,.vimrc} ./home/
 # .config directory                                         #lol super tux kart
-cp -vr ~/.config/{alacritty.yml,picom,dunst,i3,i3status,clangd,supertuxkart,mpv} home/.config/
-    
+cp -vr ~/.config/{alacritty.yml,picom,dunst,i3,i3status,clangd,supertuxkart,mpv,ranger} home/.config/
+
 cp -v ~/.config/nvim/init.vim home/.config/nvim/
 
 #STK produces a lot of logs which are useless for the player

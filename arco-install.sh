@@ -8,7 +8,7 @@ sudo pacman -Syu
 
 echo "installing additional software with pacman"
 sudo pacman -S flameshot picom nemo discord clang redshift tlp \
-gvim neovim python-pip mpv brightnessctl
+gvim neovim python-pip mpv brightnessctl ranger ueberzug
 
 echo "installing dotfiles."
 ./dots-backup.sh --install
