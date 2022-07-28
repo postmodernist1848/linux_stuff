@@ -10,23 +10,23 @@ set encoding=utf-8
 set nocompatible 
 syntax enable
 
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
-  silent !sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 call plug#begin('~/.vim/bundle')
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-scripts/AutoComplPop'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'akinsho/toggleterm.nvim', { 'tag': 'v1.*' }
 call plug#end()
 set smartindent
+
+augroup neovim_terminal
+    autocmd!
+    " Enter Terminal-mode (insert) automatically
+    autocmd TermOpen * startinsert
+    " Disables number lines on terminal buffers
+    autocmd TermOpen * :set nonumber norelativenumber
+    " allows you to use Ctrl-c on terminal window
+    autocmd TermOpen * nnoremap <buffer> <C-c> i<C-c>
+augroup END
 
 colorscheme gruvbox
 set background=dark 
@@ -55,13 +55,19 @@ set completeopt=menuone,longest
 " Scroll through autocomletion with Tab
 inoremap <expr> <Tab> ((pumvisible())?("\<C-n>"):("\<Tab>"))
 " Copy to clipboard with Ctrl-c or Ctrl-shift-c
-vmap <C-S-C> "+y<Esc>
-" run run.sh with F5
-nmap <F5> :w<CR>:!clear && ~/.scripts/run.sh %<CR>
+vmap <C-c> "+y<Esc>
+" run run.sh with f5
+ab sesset let $session =
+nmap <F5> :w<CR>:split term://run.sh % $session <CR>
 " Clear search highlighting
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Use Ex instead of Vexplorer
 cnoreabbrev Ex Vexplore
+" open horizontal splits at the bottom and vertical to the right
+set splitbelow
+set splitright
+" default for c
+nmap <F8> ggi#include <stdio.h><CR><CR>int main (int argc, char *argv[]) {<CR><CR>return 0;<CR>}<Esc>kkO
 
 function! AirlineInit()
   let g:airline_section_x = airline#section#create_right(['bookmark', 'tagbar', 'vista', 'gutentags', 'gen_tags', 'omnisharp', 'grepper', 'filetype'])

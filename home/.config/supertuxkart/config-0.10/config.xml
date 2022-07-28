@@ -8,8 +8,8 @@
              music_volume : Music volume from 0.0 to 1.0 -->
     <Audio
         sfx_on="true"
-        music_on="true"
-        sfx_volume="0.200000"
+        music_on="false"
+        sfx_volume="0.100000"
         music_volume="0.100000"
     >
     </Audio>
@@ -41,7 +41,7 @@
         soccer-time-limit="20"
         soccer-use-time-limit="true"
         random-arena-item="true"
-        difficulty="1"
+        difficulty="2"
         game_mode="3"
         soccer-red-ai-num="0"
         soccer-blue-ai-num="6"
@@ -55,7 +55,7 @@
     <kart value="tux" />
 
     <!-- Last selected kart group -->
-    <last_kart_group value="all" />
+    <last_kart_group value="standard" />
 
     <!-- Settings for the wiimote
              wiimote-raw-max : At what raw input value maximum steering is reached (between 1 and 25).
@@ -442,12 +442,12 @@ moving the mouse (means acceleration).
              addon_last_updated : Time addon-list was updated last.
              latest_addon_time : Latest approved addon time. -->
     <AddonServer
-        news_last_updated="1656012463"
+        news_last_updated="1658342162"
         news_frequency="0"
         news_display_count=""
         last_important_message_id="-1"
-        addon_last_updated="1656012465"
-        latest_addon_time="1655052145"
+        addon_last_updated="1658342164"
+        latest_addon_time="1657380864"
     >
     </AddonServer>
 
@@ -478,67 +478,67 @@ moving the mouse (means acceleration).
         skipped_tracks="1"
     >
         <Kart
-            ident="gavroche"
+            ident="wilber"
             score="14"
             local_player_id="-1"
             global_player_id="-1"
-            overall_time="112.816223"
-        />
-        <Kart
-            ident="wilber"
-            score="11"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="117.072708"
+            overall_time="140.711823"
         />
         <Kart
             ident="beastie"
-            score="4"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="130.252457"
-        />
-        <Kart
-            ident="sara_the_racer"
-            score="8"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="117.072708"
-        />
-        <Kart
-            ident="pidgin"
-            score="3"
-            local_player_id="-1"
-            global_player_id="-1"
-            overall_time="156.557800"
-        />
-        <Kart
-            ident="xue"
             score="6"
             local_player_id="-1"
             global_player_id="-1"
-            overall_time="122.214645"
+            overall_time="162.089630"
         />
         <Kart
-            ident="adiumy"
+            ident="amanda"
+            score="8"
+            local_player_id="-1"
+            global_player_id="-1"
+            overall_time="151.007980"
+        />
+        <Kart
+            ident="pidgin"
             score="2"
             local_player_id="-1"
             global_player_id="-1"
-            overall_time="174.742538"
+            overall_time="169.433121"
         />
         <Kart
-            ident="konqi"
+            ident="kiki"
+            score="11"
+            local_player_id="-1"
+            global_player_id="-1"
+            overall_time="149.924393"
+        />
+        <Kart
+            ident="puffy"
+            score="3"
+            local_player_id="-1"
+            global_player_id="-1"
+            overall_time="166.108414"
+        />
+        <Kart
+            ident="gavroche"
+            score="4"
+            local_player_id="-1"
+            global_player_id="-1"
+            overall_time="163.152145"
+        />
+        <Kart
+            ident="emule"
             score="1"
             local_player_id="-1"
             global_player_id="-1"
-            overall_time="192.938705"
+            overall_time="176.268936"
         />
         <Kart
             ident="tux"
             score="0"
             local_player_id="0"
             global_player_id="-1"
-            overall_time="471.427246"
+            overall_time="298.718567"
         />
     </SavedGP>
 

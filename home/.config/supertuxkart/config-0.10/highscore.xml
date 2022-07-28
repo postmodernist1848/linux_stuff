@@ -6,6 +6,9 @@
              hscore-type   ="HST_STANDARD"
              number-of-laps="4"
              reverse       ="false">
+             <entry time    ="130.825"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
              <entry time    ="139.35"
                     name    ="postmodernist1488"
                     kartname="tux"/>
@@ -77,7 +80,16 @@
              hscore-type   ="HST_STANDARD"
              number-of-laps="2"
              reverse       ="false">
+             <entry time    ="152.021"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
+             <entry time    ="164.12"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
              <entry time    ="176.181"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
+             <entry time    ="184.506"
                     name    ="postmodernist1488"
                     kartname="tux"/>
   </highscore>
@@ -113,6 +125,9 @@
              hscore-type   ="HST_STANDARD"
              number-of-laps="3"
              reverse       ="false">
+             <entry time    ="117.58"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
              <entry time    ="122.948"
                     name    ="postmodernist1488"
                     kartname="tux"/>
@@ -123,9 +138,6 @@
                     name    ="postmodernist1488"
                     kartname="tux"/>
              <entry time    ="129.942"
-                    name    ="postmodernist1488"
-                    kartname="tux"/>
-             <entry time    ="130.262"
                     name    ="postmodernist1488"
                     kartname="tux"/>
   </highscore>
@@ -168,6 +180,16 @@
                     name    ="postmodernist1488"
                     kartname="tux"/>
   </highscore>
+  <highscore track-name    ="sandtrack"
+             number-karts  ="1"
+             difficulty    ="2"
+             hscore-type   ="HST_STD_TIMETRIAL"
+             number-of-laps="3"
+             reverse       ="false">
+             <entry time    ="136.373"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
+  </highscore>
   <highscore track-name    ="ravenbridge_mansion"
              number-karts  ="6"
              difficulty    ="1"
@@ -188,6 +210,9 @@
                     name    ="postmodernist1488"
                     kartname="tux"/>
              <entry time    ="166.373"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
+             <entry time    ="176.497"
                     name    ="postmodernist1488"
                     kartname="tux"/>
              <entry time    ="180.564"
@@ -236,10 +261,19 @@
              hscore-type   ="HST_STANDARD"
              number-of-laps="3"
              reverse       ="false">
-             <entry time    ="148.65"
+             <entry time    ="135.923"
                     name    ="postmodernist1488"
                     kartname="tux"/>
-             <entry time    ="154.352"
+             <entry time    ="136.862"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
+             <entry time    ="137.239"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
+             <entry time    ="138.605"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
+             <entry time    ="139.035"
                     name    ="postmodernist1488"
                     kartname="tux"/>
   </highscore>
@@ -343,6 +377,16 @@
                     name    ="postmodernist1488"
                     kartname="tux"/>
   </highscore>
+  <highscore track-name    ="gran_paradiso_island"
+             number-karts  ="8"
+             difficulty    ="2"
+             hscore-type   ="HST_STANDARD"
+             number-of-laps="3"
+             reverse       ="false">
+             <entry time    ="175.69"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
+  </highscore>
   <highscore track-name    ="cornfield_crossing"
              number-karts  ="6"
              difficulty    ="1"
@@ -365,6 +409,9 @@
              hscore-type   ="HST_STANDARD"
              number-of-laps="3"
              reverse       ="false">
+             <entry time    ="151.262"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
              <entry time    ="156.491"
                     name    ="postmodernist1488"
                     kartname="tux"/>
@@ -375,9 +422,6 @@
                     name    ="postmodernist1488"
                     kartname="tux"/>
              <entry time    ="167.074"
-                    name    ="postmodernist1488"
-                    kartname="tux"/>
-             <entry time    ="170.155"
                     name    ="postmodernist1488"
                     kartname="tux"/>
   </highscore>
@@ -400,6 +444,9 @@
              hscore-type   ="HST_STANDARD"
              number-of-laps="3"
              reverse       ="false">
+             <entry time    ="150.573"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
              <entry time    ="169.966"
                     name    ="postmodernist1488"
                     kartname="tux"/>
@@ -521,6 +568,9 @@
              hscore-type   ="HST_GRANDPRIX"
              reverse-type="0"
              minor-mode="1100">
+             <entry time    ="726.737"
+                    name    ="postmodernist1488"
+                    kartname="tux"/>
              <entry time    ="760.544"
                     name    ="postmodernist1488"
                     kartname="tux"/>

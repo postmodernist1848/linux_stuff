@@ -12,8 +12,17 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+EDITOR='nvim'
+VISUAL='nvim'
 # append to the history file, don't overwrite it
 shopt -s histappend
+
+#cool stuff
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# bash vim mode
+#set -o vi
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -28,6 +37,8 @@ shopt -s checkwinsize
 #shopt -s globstar
    
 PS1='\[\033[01;34m\]\w\[\033[00m\]\$ \[\033[01;32m\]❯\[\033[00m\] '
+
+export PATH="$HOME/.scripts:$PATH"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -47,7 +58,7 @@ fi
 # some more ls aliases
 alias ll='ls -alhF'
 alias la='ls -a'
-alias l='ls -CF'
+alias l='ls -GgahF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -62,9 +73,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-alias i3conf='vim ~/.config/i3/config'
+alias i3c='$EDITOR ~/.config/i3/config'
 alias shut='shutdown now'
-
+alias 25m='bash -c '"'"'sleep 1500; notify-send "Time is out" "Your 25 minutes have passed"'"'"' &'
+alias 5m='bash -c '"'"'sleep 300; notify-send "Time is out" "Your 5 minutes have passed"'"'"' &'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -112,6 +124,47 @@ fi
 #A fix for error reporting in mupdf
 alias mupdf='mupdfs(){ mupdf $@ 2> /dev/null; }; mupdfs'
 
+# Alias for detaching evince
+read_pdf_with_evince() {
+    if [ $1 == '-e' ]; then evince $2 & disown; exit
+    else evince $1 & disown;
+    fi
+}
+alias pdf='read_pdf_with_evince'
+alias pdfe='read_pdf_with_evince -e'
+
+
+#I hate forgetting sudo
+alias fucking='sudo'
+
 #LFS variable for building and maintaining Linux From Scratch
 LFS=/mnt/lfs
 
+
+# usage: ex <file> - extract any archive of a listed type
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   tar xf $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+eval "$(thefuck --alias)"
