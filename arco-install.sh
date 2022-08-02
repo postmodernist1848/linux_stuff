@@ -60,7 +60,9 @@ EOF'
 #sudo systemctl enable battery-charge-threshold.service 
 #sudo systemctl start battery-charge-threshold.service
 
+echo "enabling tlp service"
 sudo cp -v tlp.conf /etc/
+systemctl enable tlp.service
 
 echo "changing /etc/systemd/logind.conf to enable suspend on lid close"
 

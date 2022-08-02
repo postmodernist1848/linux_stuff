@@ -67,8 +67,13 @@ cnoreabbrev Ex Vexplore
 set splitbelow
 set splitright
 " default for c
-nmap <F8> ggi#include <stdio.h><CR><CR>int main (int argc, char *argv[]) {<CR><CR>return 0;<CR>}<Esc>kkO
+nmap <F8> i#include <stdio.h><CR><CR>int main (int argc, char *argv[]) {<CR><CR>return 0;<CR>}<Esc>kkO
 
+set hlsearch!
+nnoremap <F3> :set hlsearch!<CR>
+
+
+"a fix for a bug in Airline when creating empty files
 function! AirlineInit()
   let g:airline_section_x = airline#section#create_right(['bookmark', 'tagbar', 'vista', 'gutentags', 'gen_tags', 'omnisharp', 'grepper', 'filetype'])
 endfunction

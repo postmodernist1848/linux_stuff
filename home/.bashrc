@@ -1,6 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+# Some of this is copied from Linux Mint's default bashrc
 
 # If not running interactively, don't do anything
 case $- in
@@ -14,7 +15,7 @@ HISTCONTROL=ignoreboth
 
 EDITOR='nvim'
 VISUAL='nvim'
-# append to the history file, don't overwrite it
+# append to the history file (useful for parallel bash instances)
 shopt -s histappend
 
 #cool stuff
@@ -38,22 +39,14 @@ shopt -s checkwinsize
    
 PS1='\[\033[01;34m\]\w\[\033[00m\]\$ \[\033[01;32m\]❯\[\033[00m\] '
 
+# scripts directory is added to PATH to access them from anywhere
 export PATH="$HOME/.scripts:$PATH"
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+#add colors for ls by default
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # some more ls aliases
 alias ll='ls -alhF'
@@ -68,15 +61,20 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+#if [ -f ~/.bash_aliases ]; then
+#    . ~/.bash_aliases
+#fi
+#
+# For now, I like to keep everything in the same file. It doesn't really matter. I can just search for them.
 
 alias i3c='$EDITOR ~/.config/i3/config'
 alias shut='shutdown now'
 alias 25m='bash -c '"'"'sleep 1500; notify-send "Time is out" "Your 25 minutes have passed"'"'"' &'
 alias 5m='bash -c '"'"'sleep 300; notify-send "Time is out" "Your 5 minutes have passed"'"'"' &'
+alias feh='feh --scale-down'
+alias cpv='rsync -ah --info=progress2'
+alias dow='cd /home/postmodernist1488/Downloads'
+alias doc='cd /home/postmodernist1488/Documents'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -167,4 +165,5 @@ ex ()
   fi
 }
 
-eval "$(thefuck --alias)"
+#thefuck is handy tool, but removed for being too slow on startup
+#eval "$(thefuck --alias)"
