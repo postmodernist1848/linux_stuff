@@ -1,33 +1,39 @@
-echo "installing sudoers file"
+echo "Installing sudoers file"
 sudo cp -v sudoers /etc/
 sudo chown root /etc/sudoers 
-echo 'you might wanna sudo rm -v /etc/sudoers.d/*'
+echo 'You might wanna sudo rm -v /etc/sudoers.d/*'
 
-echo "updating the database and upgrading all packages"
+echo "Installing archlinux-keyring"
+sudo pacman -Sy archlinux-keyring
+echo "Updating the database and upgrading all packages"
 sudo pacman -Syu
-
-echo "installing additional software with pacman"
+echo "Installing additional software with pacman"
 sudo pacman -S flameshot picom nemo discord clang redshift tlp \
 gvim neovim python-pip mpv brightnessctl ranger ueberzug
 
-echo "installing dotfiles."
+echo "Removing rubbish configs and stuff"
+sudo pacman -Rns conky
+rm -r .config/i3
+rm -r .config/alacritty
+
+echo "Installing dotfiles"
 ./dots-backup.sh --install
 
-echo "disabling wi-fi power management"
+echo "Disabling wi-fi power management"
 sudo cat > default-wifi-powersave-on.conf << EOF
 [connection]
 wifi.powersave = 2
 EOF
 
-echo "configuring git"
+echo "Configuring git"
 git config --global user.email "elitic.pantheism@gmail.com"
 git config --global user.name "postmodernist1488"
 
-echo "installing node (for coc-nvim)"
+echo "Installing node (for coc-nvim)"
 
 curl -sL install-node.vercel.app/lts | sudo bash
 
-echo "installing vim plug for vim and neovim"
+echo "Installing vim plug for vim and neovim"
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -37,8 +43,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 sudo su -c sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-echo "setting battery charge threshold."
 
+echo "Creating battery charge threshold service"
 sudo bash -c 'cat > /etc/systemd/system/battery-charge-threshold.service << EOF
 [Unit]
 Description=Set the battery charge threshold
@@ -60,13 +66,15 @@ EOF'
 #sudo systemctl enable battery-charge-threshold.service 
 #sudo systemctl start battery-charge-threshold.service
 
-echo "enabling tlp service"
+echo "Enabling tlp service"
 sudo cp -v tlp.conf /etc/
 systemctl enable tlp.service
 
-echo "changing /etc/systemd/logind.conf to enable suspend on lid close"
+echo "Changing /etc/systemd/logind.conf to enable suspend on lid close"
 
 sudo cp -v logind.conf /etc/systemd/
 
+echo "Adding update-grub script to /usr/sbin/"
+sudo cp update-grub /usr/sbin/
 
-
+echo "You should copy the fonts now"
