@@ -20,10 +20,10 @@ echo "Installing dotfiles"
 ./dots-backup.sh --install
 
 echo "Disabling wi-fi power management"
-sudo cat > default-wifi-powersave-on.conf << EOF
+sudo bash -c 'cat > /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf << EOF
 [connection]
 wifi.powersave = 2
-EOF
+EOF'
 
 echo "Configuring git"
 git config --global user.email "elitic.pantheism@gmail.com"
