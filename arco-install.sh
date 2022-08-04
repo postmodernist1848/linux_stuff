@@ -1,3 +1,5 @@
+set -e
+
 echo "Installing sudoers file"
 sudo cp -v sudoers /etc/
 sudo chown root /etc/sudoers 
@@ -76,5 +78,10 @@ sudo cp -v logind.conf /etc/systemd/
 
 echo "Adding update-grub script to /usr/sbin/"
 sudo cp update-grub /usr/sbin/
+
+echo "changing GRUB to 1920x1080 mode"
+sudo sed -i 's/GRUB_GFXMODE=auto/GRUB_GFXMODE=1920x1080,auto/' /etc/default/grub
+update-grub
+
 
 echo "You should copy the fonts now"
