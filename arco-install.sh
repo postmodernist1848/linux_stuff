@@ -1,4 +1,4 @@
-set -xe
+set -e
 
 echo "Installing sudoers file"
 sudo cp -v sudoers /etc/
@@ -58,4 +58,9 @@ update-grub
 # use alacritty as the terminal in nemo
 gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
-echo "You should copy the fonts now"
+echo "Copying fonts from /dev/sda1..."
+sudo mkdir -p /run/media/postmodernist1488/Ventoy
+sudo mount -v /dev/sda1 /run/media/postmodernist1488/Ventoy
+cp /run/media/postmodernist1488/Ventoy/.fonts/ -r $HOME
+sudo umount -v /dev/sda1
+
