@@ -42,6 +42,8 @@ PS1='\[\033[01;34m\]\w\[\033[00m\]\$ \[\033[01;32m\]❯\[\033[00m\] '
 # scripts directory is added to PATH to access them from anywhere
 export PATH="$HOME/.scripts:$PATH"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 #add colors for ls by default
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -49,9 +51,9 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # some more ls aliases
-alias ll='ls -alhF'
+alias ll='ls -alhF --group-directories-first'
 alias la='ls -a'
-alias l='ls -GgahF'
+alias l='ls -GgahF --group-directories-first'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -69,23 +71,18 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias i3c='$EDITOR ~/.config/i3/config'
 alias shut='shutdown now'
+timer() {
+s=$(( 60*$1 ))
+bash -c "sleep $s; notify-send 'Time is out' 'Your $1 minute(s) have passed'" & disown
+echo "Timer for $1 minutes has been set."
+}
 alias 25m='bash -c '"'"'sleep 1500; notify-send "Time is out" "Your 25 minutes have passed"'"'"' &'
 alias 5m='bash -c '"'"'sleep 300; notify-send "Time is out" "Your 5 minutes have passed"'"'"' &'
 alias feh='feh --scale-down'
 alias cpv='rsync -ah --info=progress2'
 alias dow='cd /home/postmodernist1488/Downloads'
 alias doc='cd /home/postmodernist1488/Documents'
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+CANTS_ANDROID=~/android/cants/app/jni/src/
 
 #a function to tar an lfs directory and put the backup in ~/backup directory
 lfs-backup() {
@@ -135,6 +132,11 @@ alias pdfe='read_pdf_with_evince -e'
 #I hate forgetting sudo
 alias fucking='sudo'
 
+change_dir_with_ls() {
+    cd $@ && ls
+}
+alias c='change_dir_with_ls'
+
 #LFS variable for building and maintaining Linux From Scratch
 LFS=/mnt/lfs
 
@@ -165,5 +167,15 @@ ex ()
   fi
 }
 
-#thefuck is handy tool, but removed for being too slow on startup
-#eval "$(thefuck --alias)"
+# Reboot directly to Windows
+# Inspired by http://askubuntu.com/questions/18170/how-to-reboot-into-windows-from-ubuntu
+reboot_to_windows () {
+    windows_title=$(grep -i windows /boot/grub/grub.cfg | cut -d "'" -f 2)
+    sudo grub-reboot "$windows_title" && sudo reboot
+}
+alias reboot-to-windows='reboot_to_windows'
+
+[ -f "/home/postmodernist1488/.ghcup/env" ] && source "/home/postmodernist1488/.ghcup/env" # ghcup-env
+
+
+. "$HOME/.cargo/env"

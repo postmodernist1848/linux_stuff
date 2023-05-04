@@ -97,6 +97,10 @@ bindsym $super+3 workspace 3
 bindsym $super+4 workspace 4
 bindsym $super+5 workspace 5
 bindsym $super+6 workspace 6
+bindsym $super+7 workspace 7
+bindsym $super+8 workspace 8
+bindsym $super+9 workspace 9
+bindsym $super+10 workspace 10
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace 1
@@ -105,6 +109,10 @@ bindsym $super+Shift+3 move container to workspace 3
 bindsym $super+Shift+4 move container to workspace 4
 bindsym $super+Shift+5 move container to workspace 5
 bindsym $super+Shift+6 move container to workspace 6
+bindsym $super+Shift+7 move container to workspace 7
+bindsym $super+Shift+8 move container to workspace 8
+bindsym $super+Shift+9 move container to workspace 9
+bindsym $super+Shift+10 move container to workspace 10
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
@@ -144,15 +152,14 @@ for_window [class=".*"] border pixel 1
 assign [class=firefox] 2
 assign [class=Nemo] 3
 assign [class=Geany|Gucharmap|Soffice|libreoffice*] 4
-assign [class=Audacity|Vlc|Ghb|Xfburn|Gimp*|Inkscape] 5
+assign [class=Audacity|Vlc|Ghb|Xfburn|Inkscape] 5
 assign [class=System-config-printer.py|Lxtask|GParted|Pavucontrol|Exo-helper*|Lxrandr|Arandr] 6
 for_window [class=Viewnior|feh|Sxiv|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
-for_window [class=URxvt|firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity|Nemo|Spotify] focus
+for_window [class=URxvt|firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Inkscape|Vlc|Lxappearance|Audacity|Nemo|Spotify] focus
 for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
 for_window [class=Steam title="Friends List"] floating enable
 for_window [class=Steam title="Steam - News"] floating enable
 for_window [title="Picture-in-Picture"] sticky enable
-for_window [instance="origin.exe"] floating enable
 
 # colour of border, background, text, indicator, and child_border
 client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
@@ -188,6 +195,5 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # bindsym F10 exec --no-startup-id killall xdotool
 
 
-exec_always --no-startup-id sudo systemctl restart battery-charge-threshold.service
 exec_always --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle -option caps:escape
 
