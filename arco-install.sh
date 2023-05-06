@@ -63,6 +63,11 @@ popd
 # use alacritty as the terminal in nemo
 gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
+echo "installing Rust"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
 lsblk
 read -p "Enter usb partition (/dev/sdXn): " partition
 sudo mkdir -p /run/media/postmodernist1488/mountpoint
