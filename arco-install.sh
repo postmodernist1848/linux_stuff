@@ -35,9 +35,8 @@ echo "Configuring git"
 git config --global user.email "elitic.pantheism@gmail.com"
 git config --global user.name "postmodernist1488"
 
-echo "Installing node (for coc-nvim)"
-
-curl -sL install-node.vercel.app/lts | sudo bash || true
+#echo "Installing node (for coc-nvim)"
+#curl -sL install-node.vercel.app/lts | sudo bash || true
 
 echo "Installing packer for neovim"
 
@@ -57,9 +56,10 @@ sudo cp update-grub /usr/sbin/
 
 echo "changing GRUB to 1920x1080 mode"
 sudo sed -i 's/GRUB_GFXMODE=auto/GRUB_GFXMODE=1920x1080,auto/' /etc/default/grub
-pushd Vimix-1080p
-sudo ./install.sh
-popd
+#pushd Vimix-1080p
+#sudo ./install.sh
+#popd
+sudo update-grub
 
 # use alacritty as the terminal in nemo
 gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
