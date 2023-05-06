@@ -3,7 +3,7 @@ set -e
 echo "Installing sudoers file"
 sudo cp -v sudoers /etc/
 sudo chown root /etc/sudoers 
-sudo rm -v /etc/sudoers.d/*
+sudo rm -vf /etc/sudoers.d/*
 
 echo "Installing archlinux-keyring"
 sudo pacman -Sy archlinux-keyring
@@ -11,12 +11,18 @@ echo "Updating the database and upgrading all packages"
 sudo pacman -Syu
 echo "Installing additional software with pacman"
 sudo pacman -S flameshot picom nemo discord clang redshift tlp \
-gvim neovim python-pip mpv brightnessctl ranger ueberzug
+gvim neovim python-pip mpv brightnessctl ranger ueberzug \
+android-studio ncdu nasm scrcpy sxiv feh
 
 echo "Removing rubbish configs and stuff"
-sudo pacman -Rns conky
-rm -r .config/i3
-rm -r .config/alacritty
+for package in conky kvantum polybar variety arcolinux-welcome-app; do
+    sudo pacman -Rns $(pacman -Qeq | grep $package) || true
+    rm -rf $HOME/.config/$package
+done
+
+for package in i3 alacritty; do 
+    rm -rf $HOME/.config/$package
+done
 
 echo "Installing dotfiles"
 ./dots-backup.sh --install
@@ -58,9 +64,11 @@ update-grub
 # use alacritty as the terminal in nemo
 gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
-echo "Copying fonts from /dev/sda1..."
-sudo mkdir -p /run/media/postmodernist1488/Ventoy
-sudo mount -v /dev/sda1 /run/media/postmodernist1488/Ventoy
+read -p "Enter usb partition (/dev/sdX): " partition
+echo "Copying fonts from $partition..."
+sudo mkdir -p /run/media/postmodernist1488/mountpoint
+sudo mount -v $partition /run/media/postmodernist1488/mountpoint
 cp /run/media/postmodernist1488/Ventoy/.fonts/ -r $HOME
-sudo umount -v /dev/sda1
+sudo umount -v $partition
+sudo rmdir /run/media/postmodernist1488/mountpoint
 
