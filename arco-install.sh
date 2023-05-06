@@ -78,6 +78,8 @@ echo "Copying wallpapers from $partition..."
 cp /run/media/postmodernist1488/mountpoint/wallpapers/ -r $HOME/Pictures/
 echo "Copying .ssh from $partition..."
 cp /run/media/postmodernist1488/mountpoint/.ssh/ -r $HOME/
+chmod 600 $HOME/.ssh/{id_rsa,known_hosts}
+chmod 644 $HOME/.ssh/{id_rds.pub,githubpat}
 
 sudo umount -v $partition
 sudo rmdir /run/media/postmodernist1488/mountpoint
