@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Grub2 Theme
-set -xe
 
 ROOT_UID=0
 THEME_DIR="/usr/share/grub/themes"

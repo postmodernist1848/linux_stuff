@@ -6,15 +6,15 @@ sudo chown root /etc/sudoers
 sudo rm -vf /etc/sudoers.d/*
 
 echo "Updating the database and upgrading all packages"
-sudo pacman -Syu archlinux-keyring
+sudo pacman -Syu archlinux-keyring --noconfirm
 echo "Installing additional software with pacman"
-sudo pacman -S flameshot picom nemo discord clang redshift tlp \
+sudo pacman -Sy flameshot picom nemo discord clang redshift tlp \
 gvim neovim python-pip mpv brightnessctl ranger ueberzug \
-ncdu nasm scrcpy sxiv feh
+ncdu nasm scrcpy sxiv feh --needed
 
 echo "Removing rubbish configs and stuff"
 for package in conky kvantum polybar variety arcolinux-welcome-app; do
-    sudo pacman -Rns $(pacman -Qeq | grep $package) || true
+    sudo pacman -Rns $(pacman -Qeq | grep $package) --noconfirm || true
     rm -rf $HOME/.config/$package
 done
 
@@ -37,11 +37,11 @@ git config --global user.name "postmodernist1488"
 
 echo "Installing node (for coc-nvim)"
 
-curl -sL install-node.vercel.app/lts | sudo bash
+curl -sL install-node.vercel.app/lts | sudo bash || true
 
 echo "Installing packer for neovim"
 
-yay -S nvim-packer-git
+yay -S --needed nvim-packer-git
 
 echo "Enabling tlp service"
 sudo cp -v tlp.conf /etc/
@@ -57,18 +57,22 @@ sudo cp update-grub /usr/sbin/
 echo "changing GRUB to 1920x1080 mode"
 sudo sed -i 's/GRUB_GFXMODE=auto/GRUB_GFXMODE=1920x1080,auto/' /etc/default/grub
 pushd Vimix-1080p
-sudo install.sh
+sudo ./install.sh
 popd
-update-grub
 
 # use alacritty as the terminal in nemo
 gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
-read -p "Enter usb partition (/dev/sdX): " partition
-echo "Copying fonts from $partition..."
+lsblk
+read -p "Enter usb partition (/dev/sdXn): " partition
 sudo mkdir -p /run/media/postmodernist1488/mountpoint
 sudo mount -v $partition /run/media/postmodernist1488/mountpoint
-cp /run/media/postmodernist1488/Ventoy/.fonts/ -r $HOME
+echo "Copying fonts from $partition..."
+cp /run/media/postmodernist1488/mountpoint/fonts/ -r $HOME/.local/share/
+fc-cache
+echo "Copying wallpapers from $partition..."
+cp /run/media/postmodernist1488/mountpoint/wallpapers/ -r $HOME/Pictures/
+
 sudo umount -v $partition
 sudo rmdir /run/media/postmodernist1488/mountpoint
 
