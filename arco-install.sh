@@ -12,7 +12,7 @@ sudo pacman -Syu
 echo "Installing additional software with pacman"
 sudo pacman -S flameshot picom nemo discord clang redshift tlp \
 gvim neovim python-pip mpv brightnessctl ranger ueberzug \
-android-studio ncdu nasm scrcpy sxiv feh
+ncdu nasm scrcpy sxiv feh
 
 echo "Removing rubbish configs and stuff"
 for package in conky kvantum polybar variety arcolinux-welcome-app; do
