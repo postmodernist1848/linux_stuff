@@ -41,7 +41,8 @@ curl -sL install-node.vercel.app/lts | sudo bash || true
 
 echo "Installing packer for neovim"
 
-yay -S --needed nvim-packer-git
+#yay -S --needed nvim-packer-git
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 echo "Enabling tlp service"
 sudo cp -v tlp.conf /etc/
@@ -65,8 +66,6 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
 echo "installing Rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 lsblk
 read -p "Enter usb partition (/dev/sdXn): " partition
