@@ -1,0 +1,58 @@
+#! /bin/bash
+# A simple script to build a C file. 
+# 
+# Use -o flag to specify output filepath/rename the file
+# All arguments besides the ones listed below go to the compiler directly
+# yes, you can't use -s now, but who cares? I don't
+
+flags_list="so"
+CFLAGS="-Wall -Wextra -ggdb"
+
+if [ $# -lt 1 ]; then echo "Error: not enough arguments." > /dev/stderr; exit 1
+fi
+while [[ $# -gt 0 ]]; do
+	case $1 in 
+			-*)
+                other=$(echo "$1" | tr -d $flags_list)
+                [ $other != "-" ] && CFLAGS="$CFLAGS $1" ||
+				case $1 in 
+					*s*)
+                        strp=1
+                        ;;&
+					*o*)
+                        if [ -z "$output_path" ];
+                            then output_path=$2
+                        else
+                            echo "Error: output filepath already specified, but argument '$1' found." > /dev/stderr; exit 1
+                        fi
+                        ;;
+				esac
+				[ -z "$output_path" ] || shift
+				shift
+				;;
+
+	         *) f="$f $1"
+				shift
+
+				;;
+	  esac
+done
+
+exe=$(echo $f | xargs | cut -f 1 -d " ") # first word
+exe=$(echo "${exe%.*}")  # filename without extension is the default
+set -e
+    echo "gcc$f $CFLAGS -o $exe"
+    if gcc $CFLAGS $f -o $exe; then
+			echo "Built $exe."
+            if [ ! -z "$strp" ]; then
+                echo "Striping $exe."
+                strip $exe 
+            fi
+             
+            if [[ ! -z "$output_path" ]] && [[ $output_path != $exe ]]; then
+                mv -vi $exe $output_path
+            fi
+    else
+    echo "Compilation of$f failed."
+    fi    
+
