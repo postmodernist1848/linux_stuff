@@ -5,10 +5,8 @@ sudo cp -v sudoers /etc/
 sudo chown root /etc/sudoers 
 sudo rm -vf /etc/sudoers.d/*
 
-echo "Installing archlinux-keyring"
-sudo pacman -Sy archlinux-keyring
 echo "Updating the database and upgrading all packages"
-sudo pacman -Syu
+sudo pacman -Syu archlinux-keyring
 echo "Installing additional software with pacman"
 sudo pacman -S flameshot picom nemo discord clang redshift tlp \
 gvim neovim python-pip mpv brightnessctl ranger ueberzug \
