@@ -40,7 +40,7 @@ shopt -s checkwinsize
 PS1='\[\033[01;34m\]\w\[\033[00m\]\$ \[\033[01;32m\]❯\[\033[00m\] '
 
 # scripts directory is added to PATH to access them from anywhere
-export PATH="$HOME/.scripts:$PATH"
+export PATH="$HOME/linux_stuff/scripts:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
