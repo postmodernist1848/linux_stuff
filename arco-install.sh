@@ -76,7 +76,8 @@ cp /run/media/postmodernist1488/mountpoint/fonts/ -r $HOME/.local/share/
 fc-cache
 echo "Copying wallpapers from $partition..."
 cp /run/media/postmodernist1488/mountpoint/wallpapers/ -r $HOME/Pictures/
+echo "Copying .ssh from $partition..."
+cp /run/media/postmodernist1488/mountpoint/.ssh/ -r $HOME/
 
 sudo umount -v $partition
 sudo rmdir /run/media/postmodernist1488/mountpoint
-
