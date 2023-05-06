@@ -9,7 +9,7 @@ font pango: Noto Sans 10
 floating_modifier $super
 
 #autostart
-exec_always --no-startup-id "feh --no-fehbg --bg-fill --randomize  ~/Pictures/desktop_background/*"
+exec_always --no-startup-id "feh --no-fehbg --bg-fill --randomize  ~/Pictures/wallpapers/*"
 exec --no-startup-id picom --config /home/postmodernist1488/.config/picom
 exec --no-startup-id nm-applet
 
@@ -30,7 +30,7 @@ hide_edge_borders smart
 # common apps keybinds
 bindsym Print exec --no-startup-id flameshot gui
 
-bindsym $super+Shift+Escape exec --no-startup-id i3lock -i /home/postmodernist1488/Pictures/desktop_background/daniel-leone-v7daTKlZzaw-unsplash.png
+bindsym $super+Shift+Escape exec --no-startup-id i3lock -i /home/postmodernist1488/Pictures/wallpapers/w_pink.jpg
 
 bindsym $super+b exec firefox
 bindsym $super+Shift+f exec nemo

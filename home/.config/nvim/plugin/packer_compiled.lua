@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/postmodernist1488/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["align.nvim"] = {
-    loaded = true,
-    path = "/home/postmodernist1488/.local/share/nvim/site/pack/packer/start/align.nvim",
-    url = "https://github.com/Vonr/align.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/postmodernist1488/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -174,6 +169,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/postmodernist1488/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["suda.vim"] = {
+    loaded = true,
+    path = "/home/postmodernist1488/.local/share/nvim/site/pack/packer/start/suda.vim",
+    url = "https://github.com/lambdalisue/suda.vim"
   },
   ["telescope.nvim"] = {
     loaded = true,
