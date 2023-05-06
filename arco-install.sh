@@ -56,7 +56,9 @@ sudo cp update-grub /usr/sbin/
 
 echo "changing GRUB to 1920x1080 mode"
 sudo sed -i 's/GRUB_GFXMODE=auto/GRUB_GFXMODE=1920x1080,auto/' /etc/default/grub
-sudo Vimix-1080p/install.sh
+pushd Vimix-1080p
+sudo install.sh
+popd
 update-grub
 
 # use alacritty as the terminal in nemo
