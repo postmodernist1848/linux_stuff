@@ -78,6 +78,9 @@ else
                 fi
             fi
             ;;
+        go)
+            go run $@
+            ;;
         sh)
             time $@
             exit $?

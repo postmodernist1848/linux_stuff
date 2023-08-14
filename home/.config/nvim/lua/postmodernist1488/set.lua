@@ -29,3 +29,15 @@ vim.opt.termguicolors = true
 vim.opt.updatetime = 1000
 
 --vim.opt.signcolumn = "yes"
+vim.api.nvim_create_autocmd(
+    {
+        "BufNewFile",
+        "BufRead",
+    },
+    {
+        pattern = "*.fs,*.vs",
+        callback = function()
+            vim.bo.filetype = "glsl"
+        end
+    }
+)

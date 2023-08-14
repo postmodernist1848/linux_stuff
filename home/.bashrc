@@ -40,7 +40,7 @@ shopt -s checkwinsize
 PS1='\[\033[01;34m\]\w\[\033[00m\]\$ \[\033[01;32m\]❯\[\033[00m\] '
 
 # scripts directory is added to PATH to access them from anywhere
-export PATH="$HOME/linux_stuff/scripts:$PATH"
+export PATH="$PATH:$HOME/linux_stuff/scripts"
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -128,6 +128,9 @@ read_pdf_with_evince() {
 alias pdf='read_pdf_with_evince'
 alias pdfe='read_pdf_with_evince -e'
 
+sha256() {
+    echo -n $@ | sha256sum
+}
 
 #I hate forgetting sudo
 alias fucking='sudo'
