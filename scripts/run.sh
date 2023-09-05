@@ -79,7 +79,12 @@ else
             fi
             ;;
         go)
-            go run $@
+            time go run $@
+            ;;
+        java)
+            exe="${f%.*}"
+            javac -cp $(dirname $f) $f
+            java -cp $(dirname $f) $(basename $exe) ${@:2}
             ;;
         sh)
             time $@
