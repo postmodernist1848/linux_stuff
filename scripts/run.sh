@@ -10,20 +10,37 @@ if [ $# -lt 1 ]; then
 echo "Error: not enough arguments." > /dev/stderr
 exit 1
 else
+    filepath=$1
     filename=$(basename -- "$1")
     extension="${filename##*.}"
-    f=$1
+
+    for (( dashdashi=1; dashdashi <= "$#"; dashdashi++ )); do
+        if [[ ${!dashdashi} == "--" ]]; then
+            break
+        fi
+    done
+
+    
+    #TODO: healthy version with all args preserved
+    compilation_args=${@:2:dashdashi - 2}
+    runtime_args=${@:dashdashi + 1}
+    #printargs "$@"
+    #printargs ${compilation_args@Q}
+    #printargs ${@:2:dashdashi - 2}
+    #exit 1
+
     case $extension in
         py)
-            time python $@
+            time python $filepath $compilation_args -- $runtime_args 
             exit $?
             ;;
         S)
             exe="${f%.*}"
-            echocmd as $@ -o "$exe.o" &&
-            ld -o $exe "$exe.o" && time $exe
+            echocmd as $@ -o "$exe.o" $compilation_args &&
+            ld -o $exe "$exe.o" && time $exe $runtime_args
             exit $?
             ;;
+        #TODO: every lang below
         asm)
             exe="${f%.*}"
             echocmd nasm $@ -g -felf64 &&
@@ -31,7 +48,7 @@ else
             exit $?
             ;;
         hs)
-            if grep "main = do" $f; then
+            if grep "main = do" $filepath; then
                 runhaskell $@
             else
                 ghci -W $@
@@ -40,15 +57,14 @@ else
             ;;
         c | cpp)
             [ $extension == 'c' ] && cc=gcc || cc=g++
-            exe="${f%.*}"
+            exe="${filename%.*}"
             if [ ! -z $(find . -maxdepth 1 -name Makefile | xargs) ]; then
                 echocmd make && time $exe
                 exit $?
             else
                 CFLAGS="-Wall -Wextra -lm"
-                echo $cc $@ $CFLAGS -o $exe 
-                if echocmd $cc $@ $CFLAGS -o $exe; then 
-                    time $exe
+                if echocmd $cc $filepath $compilation_args $CFLAGS -o $exe; then 
+                    time ./$exe
                     exitcode=$?
                     rm $exe 
                     exit $exitcode
@@ -66,7 +82,7 @@ else
             ;;
         rs)
             # 'detecting' a cargo project
-            abspath=$(realpath $f)
+            abspath=$(realpath $filename)
             projectdir=$(echo $abspath | awk -F 'src' '{print $1}')
             if [[ -f $projectdir/Cargo.toml ]]; then
                 cargo run
@@ -83,11 +99,16 @@ else
             ;;
         java)
             exe="${f%.*}"
-            javac -cp $(dirname $f) $f
-            java -cp $(dirname $f) $(basename $exe) ${@:2}
+            javac -cp $(dirname $filepath) $filepath &&
+            java -cp $(dirname $filepath) $(basename $filepath) ${@:2}
             ;;
         sh)
             time $@
+            exit $?
+            ;;
+        v)
+            iverilog $filepath &&
+            time ./a.out
             exit $?
             ;;
         *)
