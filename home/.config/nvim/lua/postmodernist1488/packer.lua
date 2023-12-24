@@ -24,7 +24,6 @@ return require('packer').startup(function(use)
     --use { "ellisonleao/gruvbox.nvim" }
     --use 'morhetz/gruvbox'
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use {
@@ -32,8 +31,9 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use 'lambdalisue/suda.vim'
-    use 'ThePrimeagen/vim-be-good'
-
+    use {'kaarmu/typst.vim', ft = {'typst'}}
+    use 'lervag/vimtex'
+    use 'mfussenegger/nvim-jdtls'
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'}, -- Optional
         }
     }
+
     if packer_bootstrap then
         require('packer').sync()
     end

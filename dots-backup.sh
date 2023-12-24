@@ -22,6 +22,7 @@ backup_dots() {
         cp -vr ~/.config/$file home/.config/
     done
 
+    rm -v home/.config/nvim/plugin/packer_compiled.lua
 }
 
 install_dots() {

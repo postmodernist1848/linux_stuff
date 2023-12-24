@@ -4,12 +4,12 @@
     <player name="postmodernist1488" guest="false" use-frequency="18"
             icon-filename="1.png"
             unique-id="1" saved-session="true"
-            saved-user="369602" saved-token="2abb99d1c422f9e0f8c22a8c"
+            saved-user="369602" saved-token="22aa97d8e3ac0a595997cd03"
             last-online-name="postmodernist1488" last-was-online="true"
             remember-password="true"
             default-kart-color="0">
       <story-mode first-time="false" finished="false" speedrun-finished="false"
-                  story-ms="35558846" speedrun-ms="41580214">
+                  story-ms="35684585" speedrun-ms="41720017">
         <abyss solved="hard" best_while_slower="false"/>
         <candela_city solved="hard" best_while_slower="false"/>
         <cocoa_temple solved="none" best_while_slower="false"/>
@@ -65,11 +65,11 @@
           <var counter="1"/>
           <var counter="31"/>
           <var counter="20"/>
-          <var counter="265"/>
+          <var counter="266"/>
           <var counter="93"/>
           <var counter="1"/>
           <var counter="1"/>
-          <var counter="335"/>
+          <var counter="337"/>
           <var counter="94"/>
           <var counter="61"/>
           <var counter="21"/>
@@ -117,7 +117,7 @@
           <track_stats ident="hacienda" sta="7" fin="5" won="3" fin_rev="0" fin_al="0" l_laps="0" m_laps="0" t_laps="0" eh_sta="0" eh_fin="0"/>
           <track_stats ident="lighthouse" sta="2" fin="2" won="2" fin_rev="0" fin_al="0" l_laps="0" m_laps="0" t_laps="0" eh_sta="0" eh_fin="0"/>
           <track_stats ident="mines" sta="5" fin="2" won="0" fin_rev="0" fin_al="0" l_laps="0" m_laps="0" t_laps="0" eh_sta="0" eh_fin="0"/>
-          <track_stats ident="minigolf" sta="19" fin="7" won="1" fin_rev="0" fin_al="0" l_laps="0" m_laps="0" t_laps="0" eh_sta="0" eh_fin="0"/>
+          <track_stats ident="minigolf" sta="20" fin="7" won="1" fin_rev="0" fin_al="0" l_laps="0" m_laps="0" t_laps="0" eh_sta="0" eh_fin="0"/>
           <track_stats ident="olivermath" sta="8" fin="5" won="2" fin_rev="0" fin_al="0" l_laps="5" m_laps="0" t_laps="0" eh_sta="0" eh_fin="0"/>
           <track_stats ident="ravenbridge_mansion" sta="14" fin="6" won="4" fin_rev="0" fin_al="0" l_laps="0" m_laps="0" t_laps="0" eh_sta="0" eh_fin="0"/>
           <track_stats ident="sandtrack" sta="13" fin="7" won="3" fin_rev="0" fin_al="3" l_laps="0" m_laps="0" t_laps="0" eh_sta="0" eh_fin="0"/>

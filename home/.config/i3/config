@@ -29,6 +29,7 @@ hide_edge_borders smart
 
 # common apps keybinds
 bindsym Print exec --no-startup-id flameshot gui
+# bindsym Print exec --no-startup-id scrot
 
 bindsym $super+Shift+Escape exec --no-startup-id i3lock -i /home/postmodernist1488/Pictures/wallpapers/w_pink.jpg
 

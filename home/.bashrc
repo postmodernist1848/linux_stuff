@@ -15,6 +15,8 @@ HISTCONTROL=ignoreboth
 
 EDITOR='nvim'
 VISUAL='nvim'
+BROWSER='firefox'
+
 # append to the history file (useful for parallel bash instances)
 shopt -s histappend
 
@@ -70,7 +72,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # For now, I like to keep everything in the same file. It doesn't really matter. I can just search for them.
 
 alias i3c='$EDITOR ~/.config/i3/config'
-alias shut='shutdown now'
+alias shitdown='shutdown now'
 timer() {
 s=$(( 60*$1 ))
 bash -c "sleep $s; notify-send 'Time is out' 'Your $1 minute(s) have passed'" & disown
@@ -82,7 +84,7 @@ alias feh='feh --scale-down'
 alias cpv='rsync -ah --info=progress2'
 alias dow='cd /home/postmodernist1488/Downloads'
 alias doc='cd /home/postmodernist1488/Documents'
-CANTS_ANDROID=~/android/cants/app/jni/src/
+alias gg='git log --all --graph'
 
 #a function to tar an lfs directory and put the backup in ~/backup directory
 lfs-backup() {
@@ -129,11 +131,16 @@ alias pdf='read_pdf_with_evince'
 alias pdfe='read_pdf_with_evince -e'
 
 sha256() {
-    echo -n $@ | sha256sum
+    sha256sum=$(echo -n $@ | sha256sum)
+    echo ${sha256sum::64}
+    echo -n ${sha256sum::64} | xclip -selection clipboard
 }
 
 #I hate forgetting sudo
 alias fucking='sudo'
+
+alias gs='git status'
+alias gl='git log --graph --all'
 
 change_dir_with_ls() {
     cd $@ && ls
@@ -171,7 +178,7 @@ ex ()
 }
 
 # Reboot directly to Windows
-# Inspired by http://askubuntu.com/questions/18170/how-to-reboot-into-windows-from-ubuntu
+# Got this from http://askubuntu.com/questions/18170/how-to-reboot-into-windows-from-ubuntu
 reboot_to_windows () {
     windows_title=$(grep -i windows /boot/grub/grub.cfg | cut -d "'" -f 2)
     sudo grub-reboot "$windows_title" && sudo reboot
@@ -179,6 +186,3 @@ reboot_to_windows () {
 alias reboot-to-windows='reboot_to_windows'
 
 [ -f "/home/postmodernist1488/.ghcup/env" ] && source "/home/postmodernist1488/.ghcup/env" # ghcup-env
-
-
-. "$HOME/.cargo/env"
