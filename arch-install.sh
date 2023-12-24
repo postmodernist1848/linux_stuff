@@ -1,5 +1,3 @@
-set -e
-
 echo "Installing sudoers file"
 sudo cp -v sudoers /etc/
 sudo chown root /etc/sudoers 
@@ -8,44 +6,19 @@ sudo rm -vf /etc/sudoers.d/*
 echo "Updating the database and upgrading all packages"
 sudo pacman -Syu archlinux-keyring --noconfirm
 echo "Installing additional software with pacman"
-sudo pacman -Sy flameshot picom nemo clang redshift \
-gvim neovim python-pip mpv brightnessctl ranger ueberzug \
-ncdu nasm scrcpy sxiv feh --needed
-
-echo "Removing rubbish configs and stuff"
-for package in conky kvantum polybar variety arcolinux-welcome-app; do
-    sudo pacman -Rns $(pacman -Qeq | grep $package) --noconfirm || true
-    rm -rf $HOME/.config/$package
-done
-
-for package in i3 alacritty; do 
-    rm -rf $HOME/.config/$package
-done
+sudo pacman -Sy flameshot picom nemo clang redshift less \
+gvim neovim python-pip mpv brightnessctl alsa-utils ranger ueberzug \
+ncdu nasm scrcpy sxiv feh  --needed
 
 echo "Installing dotfiles"
 ./dots-backup.sh --install
-
-echo "Disabling wi-fi power management"
-sudo bash -c 'cat > /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf << EOF
-[connection]
-wifi.powersave = 2
-EOF'
 
 echo "Configuring git"
 git config --global user.email "elitic.pantheism@gmail.com"
 git config --global user.name "postmodernist1488"
 
-#echo "Installing node (for coc-nvim)"
-#curl -sL install-node.vercel.app/lts | sudo bash || true
-
 echo "Installing packer for neovim"
-
-#yay -S --needed nvim-packer-git
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-
-echo "Enabling tlp service"
-sudo cp -v tlp.conf /etc/
-systemctl enable tlp.service
 
 echo "Changing /etc/systemd/logind.conf to enable suspend on lid close"
 sudo cp -v logind.conf /etc/systemd/
@@ -63,4 +36,14 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 echo "installing Rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+echo "Installing yay"
+ 
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+rm -rf yay
+
 ./copy.sh
+
