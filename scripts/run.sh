@@ -107,7 +107,7 @@ else
             exit $?
             ;;
         v)
-            iverilog $filepath &&
+            iverilog -g2001 $filepath &&
             time ./a.out
             exit $?
             ;;
