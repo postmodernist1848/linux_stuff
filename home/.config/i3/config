@@ -3,7 +3,7 @@ set $super Mod4
 set $alt Mod1
 
 # set font
-font pango: Noto Sans 10
+font pango:Iosevka 12
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
@@ -40,12 +40,12 @@ bindsym $super+c exec --no-startup-id code
 #change volume
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master '5%+'"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master '5%-'"
-bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse set Master toggle"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer sset Master '5%+'"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer sset Master '5%-'"
+bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle"
 
 # start volume icon in tray
-exec --no-startup-id volumeicon
+# exec --no-startup-id volumeicon
 
 # kill focused window
 bindsym $super+Shift+q kill
@@ -172,8 +172,8 @@ client.background           #2f343f
 
 
 #Warm colors mode
-bindsym $super+KP_Add exec --no-startup-id redshift -O 3700
-bindsym $super+KP_Subtract exec --no-startup-id redshift -x
+bindsym $super+XF86MonBrightnessUp exec --no-startup-id redshift -O 3700
+bindsym $super+XF86MonBrightnessDown exec --no-startup-id redshift -x
 
 #Change brightness level
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo brightnessctl s +5%
@@ -197,4 +197,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 
 exec_always --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle -option caps:escape
+
+
+exec_always xmodmap -e "keycode 20 = KP_Subtract"
+exec_always xmodmap -e "keycode 21 = KP_Add"
 

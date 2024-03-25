@@ -13,7 +13,7 @@ order += "cpu_temperature 0"
 order += "disk /"
 order += "disk /home"
 order += "ethernet enp2s0"
-order += "wireless wlp4s0"
+order += "wireless wlan0"
 order += "volume master"
 order += "battery all"
 order += "tztime local"
@@ -47,7 +47,7 @@ ethernet enp2s0 {
         format_down = "<span background='#88c0d0'>  Disconnected </span>"
 }
 
-wireless wlp4s0 {
+wireless wlan0 {
         format_up = "<span background='#b48ead'>  %essid: %quality </span>"
         format_down = "<span background='#b48ead'>  Disconnected </span>"
 }
@@ -62,7 +62,7 @@ volume master {
 
 battery all {
 	last_full_capacity = true
-        format = "<span background='#a3be8c'>  %status %percentage </span>"
+        format = "<span background='#a3be8c'>  %status %percentage %remaining </span>"
         format_down = "No Battery"
         status_chr = "Charging"
         status_bat = "Battery"
@@ -73,6 +73,6 @@ battery all {
 }
 
 tztime local {
-		format = "<span background='#81a1c1'>  %a %-d %b %H:%M </span>                                                                                        	                                        "
+		format = "<span background='#81a1c1'>  %a %-d %b %H:%M </span>                                                                                                  "
 }
 

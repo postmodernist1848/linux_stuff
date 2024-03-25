@@ -4,12 +4,12 @@
     <player name="postmodernist1488" guest="false" use-frequency="18"
             icon-filename="1.png"
             unique-id="1" saved-session="true"
-            saved-user="369602" saved-token="22aa97d8e3ac0a595997cd03"
+            saved-user="369602" saved-token="c6f583a67ccccd0b4ba1e14b"
             last-online-name="postmodernist1488" last-was-online="true"
             remember-password="true"
             default-kart-color="0">
       <story-mode first-time="false" finished="false" speedrun-finished="false"
-                  story-ms="35684585" speedrun-ms="41720017">
+                  story-ms="35695557" speedrun-ms="41743549">
         <abyss solved="hard" best_while_slower="false"/>
         <candela_city solved="hard" best_while_slower="false"/>
         <cocoa_temple solved="none" best_while_slower="false"/>
@@ -69,7 +69,7 @@
           <var counter="93"/>
           <var counter="1"/>
           <var counter="1"/>
-          <var counter="337"/>
+          <var counter="338"/>
           <var counter="94"/>
           <var counter="61"/>
           <var counter="21"/>
@@ -102,7 +102,7 @@
           <var counter="279"/>
           <var counter="0"/>
           <var counter="12"/>
-          <var counter="2754"/>
+          <var counter="2756"/>
           <var counter="1"/>
           <var counter="48"/>
           <var counter="1"/>

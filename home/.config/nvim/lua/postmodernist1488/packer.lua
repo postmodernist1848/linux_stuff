@@ -21,9 +21,8 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use 'sainnhe/gruvbox-material'
-    --use { "ellisonleao/gruvbox.nvim" }
-    --use 'morhetz/gruvbox'
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use { "ellisonleao/gruvbox.nvim" }
+    use 'morhetz/gruvbox'
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use {
@@ -33,7 +32,9 @@ return require('packer').startup(function(use)
     use 'lambdalisue/suda.vim'
     use {'kaarmu/typst.vim', ft = {'typst'}}
     use 'lervag/vimtex'
+    use 'Vimjas/vim-python-pep8-indent'
     use 'mfussenegger/nvim-jdtls'
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -56,6 +57,7 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'}, -- Optional
         }
     }
+    -- use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate', })
 
     if packer_bootstrap then
         require('packer').sync()

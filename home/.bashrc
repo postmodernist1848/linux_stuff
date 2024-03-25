@@ -186,3 +186,5 @@ reboot_to_windows () {
 alias reboot-to-windows='reboot_to_windows'
 
 [ -f "/home/postmodernist1488/.ghcup/env" ] && source "/home/postmodernist1488/.ghcup/env" # ghcup-env
+
+eval "$(zoxide init bash)"

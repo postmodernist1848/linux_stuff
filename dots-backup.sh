@@ -18,7 +18,7 @@ backup_dots() {
     #STK produces a lot of logs which are useless for the player
     rm -vf $HOME/.config/supertuxkart/config-0.10/stdout*
 
-    for file in alacritty.yml picom dunst i3 i3status clangd supertuxkart mpv ranger nvim; do
+    for file in alacritty.toml picom dunst i3 i3status clangd supertuxkart mpv ranger nvim; do
         cp -vr ~/.config/$file home/.config/
     done
 
