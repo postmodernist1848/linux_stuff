@@ -20,10 +20,12 @@ for file in $(find $1 -type f | cut -d '/' -f2-); do
     if samefile "$dest" "$src"; then
         echo "$dest and $src are the same file (links). Skipping..."
     elif [ -e "$dest" ]; then
-        read -p "File $dest exists. Replace? (y/n)" yn
+        read -p "File $dest exists. Replace, skip or back up? (y/s/b)" yn
 
         case $yn in
             [Yy]* ) ln -vf "$src" "$dest"
+                ;;
+            [Bb]* ) cp $dest $src && ln -vf "$src" "$dest"
                 ;;
             * ) echo "Skipping $dest..."
                 ;;
