@@ -2,4 +2,7 @@ InlayHints:
   Enabled: No
   ParameterNames: No
   DeducedTypes: No
-  
+If:
+  PathMatch: [.*\.cpp]
+CompileFlags:
+  Add: [-std=c++20]
