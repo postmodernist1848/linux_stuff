@@ -1,8 +1,6 @@
 /* used for debugging */
 
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
 void print_all_args(int count, char **args) {
     printf("%d argument(s):\n", count);

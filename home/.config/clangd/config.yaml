@@ -3,6 +3,6 @@ InlayHints:
   ParameterNames: No
   DeducedTypes: No
 If:
-  PathMatch: [.*\.cpp]
+  PathMatch: [.*\.cpp, .*\.hpp]
 CompileFlags:
   Add: [-std=c++20]

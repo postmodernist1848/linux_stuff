@@ -1,9 +1,16 @@
 #! /bin/bash
+
+set -euo pipefail
+
 # A simple script to compile and run files in different programming languages
 
 echocmd() {
     echo "$@"
     "$@"
+}
+
+run() {
+    time $(realpath "$1") "${@:2}"
 }
 
 if [ $# -lt 1 ]; then 
@@ -13,6 +20,7 @@ else
     filepath=$1
     filename=$(basename -- "$1")
     extension="${filename##*.}"
+    exe="${filename%.*}"
 
     for (( dashdashi=1; dashdashi <= "$#"; dashdashi++ )); do
         if [[ ${!dashdashi} == "--" ]]; then
@@ -20,53 +28,49 @@ else
         fi
     done
 
-    
-    #TODO: healthy version with all args preserved
-    compilation_args=${@:2:dashdashi - 2}
-    runtime_args=${@:dashdashi + 1}
-    #printargs "$@"
-    #printargs ${compilation_args@Q}
-    #printargs ${@:2:dashdashi - 2}
-    #exit 1
+    compilation_args=("${@:2:dashdashi - 2}")
+    runtime_args=("${@:dashdashi + 1}")
+
+    # NOTE: this is how to use arrays:
+    # printargs "${compilation_args[@]}"
+    # printargs "${runtime_args[@]}"
 
     case $extension in
         py)
-            time python $filepath $compilation_args -- $runtime_args 
+            time python "$filepath" "${compilation_args[@]}" -- "${runtime_args[@]}"
             exit $?
             ;;
         S)
-            exe="${f%.*}"
-            echocmd as $@ -o "$exe.o" $compilation_args &&
-            ld -o $exe "$exe.o" && time $exe $runtime_args
+            echocmd as "$filepath" -o "$exe.o" "${compilation_args[@]}" &&
+            echocmd ld -o $exe "$exe.o" && 
+            run $exe "${runtime_args[@]}"
             exit $?
             ;;
-        #TODO: every lang below
         asm)
-            exe="${f%.*}"
-            echocmd nasm $@ -g -felf64 &&
-            ld -o $exe "$exe.o" && time $exe
+            echocmd nasm "$filepath" -g -felf64 -o "$exe.o" "${compilation_args[@]}" &&
+            echocmd ld -o "$exe" "$exe.o" && 
+            run $exe "${runtime_args[@]}"
             exit $?
             ;;
         hs)
-            if grep "main = do" $filepath; then
-                runhaskell $@
+            if grep "main =" "$filepath"; then
+                runhaskell "$@"
             else
-                ghci -W $@
+                ghci -W "$@"
             fi
             exit $?
             ;;
         c | cpp)
             [ $extension == 'c' ] && cc=gcc || cc=g++
-            exe="${filename%.*}"
             if [ ! -z $(find . -maxdepth 1 -name Makefile | xargs) ]; then
-                echocmd make && time $exe
+                echocmd make && time "$exe" "${runtime_args[@]}"
                 exit $?
             else
                 CFLAGS="-Wall -Wextra -lm"
-                if echocmd $cc $filepath $compilation_args $CFLAGS -o $exe; then 
-                    time ./$exe
+                if echocmd "$cc" "$filepath" "${compilation_args[@]}" $CFLAGS -o "$exe"; then 
+                    run "$exe"
                     exitcode=$?
-                    rm $exe 
+                    rm "$exe" "${runtime_args[@]}"
                     exit $exitcode
                 else 
                     exit $?
@@ -74,41 +78,39 @@ else
             fi
             ;;
         cs) 
-            exe="${f%.*}.exe"
-            if echocmd mcs $@; then
-                mono $exe
-                rm $exe
+            if echocmd mcs "$@"; then
+                mono "$exe.exe"
+                rm "$exe.exe"
             fi
             ;;
         rs)
             # 'detecting' a cargo project
-            abspath=$(realpath $filename)
-            projectdir=$(echo $abspath | awk -F 'src' '{print $1}')
+            abspath=$(realpath "$filename")
+            projectdir=$(echo "$abspath" | awk -F 'src' '{print $1}')
             if [[ -f $projectdir/Cargo.toml ]]; then
                 cargo run
             else 
-                exe="${f%.*}"
-                if echocmd rustc $@; then
-                    $exe
+                if echocmd rustc "${compilation_args[@]}"; then
+                    run "$exe"
                     rm $exe
                 fi
             fi
             ;;
         go)
-            time go run $@
+            time go run "$@"
             ;;
         java)
-            exe="${f%.*}"
-            javac -cp $(dirname $filepath) $filepath &&
-            java -cp $(dirname $filepath) $(basename $filepath) ${@:2}
+            javac -cp $(dirname "$filepath") "$filepath" "${compilation_args[@]}" &&
+            java -cp $(dirname "$filepath") $(basename "$filepath") "${runtime_args[@]}"
+            exit $?
             ;;
         sh)
             time $@
             exit $?
             ;;
         v)
-            iverilog -g2001 $filepath &&
-            time ./a.out
+            iverilog -g2001 "$filepath" "${compilation_args[@]}" &&
+            time ./a.out "${runtime_args[@]}"
             exit $?
             ;;
         *)

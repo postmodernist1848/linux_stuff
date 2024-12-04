@@ -13,16 +13,12 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-EDITOR='nvim'
-VISUAL='nvim'
-BROWSER='firefox'
+export EDITOR='nvim'
+export VISUAL='nvim'
+export BROWSER='firefox'
 
 # append to the history file (useful for parallel bash instances)
 shopt -s histappend
-
-#cool stuff
-alias ..='cd ..'
-alias ...='cd ../..'
 
 # bash vim mode
 #set -o vi
@@ -46,17 +42,6 @@ export PATH="$PATH:$HOME/linux_stuff/scripts"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-#add colors for ls by default
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-# some more ls aliases
-alias ll='ls -alhF --group-directories-first'
-alias la='ls -a'
-alias l='ls -GgahF --group-directories-first'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -65,11 +50,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-#if [ -f ~/.bash_aliases ]; then
-#    . ~/.bash_aliases
-#fi
-#
-# For now, I like to keep everything in the same file. It doesn't really matter. I can just search for them.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 alias i3c='$EDITOR ~/.config/i3/config'
 alias shitdown='shutdown now'
@@ -81,10 +64,8 @@ echo "Timer for $1 minutes has been set."
 alias 25m='bash -c '"'"'sleep 1500; notify-send "Time is out" "Your 25 minutes have passed"'"'"' &'
 alias 5m='bash -c '"'"'sleep 300; notify-send "Time is out" "Your 5 minutes have passed"'"'"' &'
 alias feh='feh --scale-down'
-alias cpv='rsync -ah --info=progress2'
-alias dow='cd /home/postmodernist1488/Downloads'
-alias doc='cd /home/postmodernist1488/Documents'
-alias gg='git log --all --graph'
+alias dow='cd ~/Downloads'
+alias doc='cd ~/Documents'
 
 #a function to tar an lfs directory and put the backup in ~/backup directory
 lfs-backup() {
@@ -139,8 +120,6 @@ sha256() {
 #I hate forgetting sudo
 alias fucking='sudo'
 
-alias gs='git status'
-alias gl='git log --graph --all'
 
 change_dir_with_ls() {
     cd $@ && ls
@@ -179,12 +158,32 @@ ex ()
 
 # Reboot directly to Windows
 # Got this from http://askubuntu.com/questions/18170/how-to-reboot-into-windows-from-ubuntu
-reboot_to_windows () {
+reboot-to-windows () {
     windows_title=$(grep -i windows /boot/grub/grub.cfg | cut -d "'" -f 2)
     sudo grub-reboot "$windows_title" && sudo reboot
 }
-alias reboot-to-windows='reboot_to_windows'
+
+jb-faketime () {
+    faketime '2024-9-24 08:15:42' "$@"
+}
+
+clion-faketime () {
+    jb-faketime /opt/clion/bin/clion.sh
+}
+
+goland-faketime () {
+    jb-faketime goland
+}
+
+idea-faketime () {
+    jb-faketime intellij-idea-ultimate-edition
+}
+
 
 [ -f "/home/postmodernist1488/.ghcup/env" ] && source "/home/postmodernist1488/.ghcup/env" # ghcup-env
 
 eval "$(zoxide init bash)"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
