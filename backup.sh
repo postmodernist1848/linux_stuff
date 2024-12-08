@@ -1,12 +1,7 @@
 set -euo pipefail
 
-rp=$(realpath "$@")
-dest="$HOME/linux_stuff/root$rp"
+src=$(realpath "$@")
+target="$HOME/linux_stuff/files$src"
 
-if [[ "$rp" == "$HOME"* ]]; then
-    dest=$HOME/linux_stuff/home${rp#"$HOME"}
-fi
-
-mkdir -p $(dirname "$dest")
-cp -v $rp $dest
-ln -v $dest $rp
+mkdir -p $(dirname "$target")
+ln -v "$src" "$target"
