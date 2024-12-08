@@ -219,3 +219,6 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 }
 
 seat seat0 xcursor_theme Bibata-Modern-Ice
+
+set $wallpapers_path $HOME/Pictures/wallpapers/
+output * bg `find $wallpapers_path -type f | shuf -n 1` fill
