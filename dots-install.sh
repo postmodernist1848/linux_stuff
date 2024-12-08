@@ -17,7 +17,7 @@ fi
 
 for src in $(find $LINUX_STUFF/files -type f); do
     SUDO=""
-    if [[ "$src" != "$LINUX_STUFF/$HOME"* ]]; then
+    if [[ "$src" != "$LINUX_STUFF/files/$HOME"* ]]; then
         SUDO="sudo"
     fi
     target=${src#"$LINUX_STUFF/files"}
@@ -26,18 +26,17 @@ for src in $(find $LINUX_STUFF/files -type f); do
     if samefile "$src" "$target"; then
         echo "$target already linked. Skipping..."
     elif [ -e "$target" ]; then
-        diff "$target" "$src"
         read -p "File $target exists. Replace, skip or back up? (y/s/b)" resp
 
         case $resp in
             [Yy]* ) $SUDO ln -vf "$src" "$target"
                 ;;
-            [Bb]* ) ./backup.sh "$target"
+            [Bb]* ) $SUDO ln -vf "$target" "$src"
                 ;;
             * ) echo "Skipping $target..."
                 ;;
         esac
     else
-        $SUDO ln -v "$src" "$target"
+        $SUDO mkdir -p $(dirname "$target") && $SUDO ln -v "$src" "$target"
     fi
 done
