@@ -20,12 +20,13 @@ for src in $(find $LINUX_STUFF/files -type f); do
     if [[ "$src" != "$LINUX_STUFF/$HOME"* ]]; then
         SUDO="sudo"
     fi
-    target=${src%"$LINUX_STUFF/files"}
+    target=${src#"$LINUX_STUFF/files"}
     # src <- target
 
     if samefile "$src" "$target"; then
         echo "$target already linked. Skipping..."
     elif [ -e "$target" ]; then
+        diff "$target" "$src"
         read -p "File $target exists. Replace, skip or back up? (y/s/b)" resp
 
         case $resp in
