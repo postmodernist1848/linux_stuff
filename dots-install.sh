@@ -17,7 +17,7 @@ fi
 
 for src in $(find $LINUX_STUFF/files -type f); do
     SUDO=""
-    if [[ "$src" != "$LINUX_STUFF/files/$HOME"* ]]; then
+    if [[ "$target" != "$LINUX_STUFF/files/$HOME"* ]]; then
         SUDO="sudo"
     fi
     target=${src#"$LINUX_STUFF/files"}
