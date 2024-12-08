@@ -30,7 +30,7 @@ background = "0x282828"
 foreground = "0xdfbf8e"
 
 [font]
-size = 12
+size = 20
 
 [font.normal]
 family = "Iosevka Nerd Font"
@@ -42,3 +42,8 @@ dynamic_padding = true
 [window.padding]
 x = 6
 y = 5
+
+[keyboard]
+bindings = [
+   { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" }
+]

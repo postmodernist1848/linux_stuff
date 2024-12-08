@@ -1,21 +1,10 @@
-echo "Installing sudoers file"
-sudo cp -v sudoers /etc/
-sudo chown root /etc/sudoers 
-sudo rm -vf /etc/sudoers.d/*
-
-echo "Updating the database and upgrading all packages"
-sudo pacman -Syu archlinux-keyring --noconfirm
-echo "Installing additional software with pacman"
-sudo pacman -Sy flameshot picom nemo clang redshift less \
-gvim neovim python-pip mpv brightnessctl alsa-utils ranger ueberzug \
-ncdu nasm scrcpy sxiv feh  --needed
-
+# This is an outdated script. Use for reference
 echo "Installing dotfiles"
-./dots-backup.sh --install
+./dots-install
 
 echo "Configuring git"
 git config --global user.email "elitic.pantheism@gmail.com"
-git config --global user.name "postmodernist1488"
+git config --global user.name "postmodernist1848"
 
 echo "Installing packer for neovim"
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'

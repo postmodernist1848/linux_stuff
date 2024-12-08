@@ -114,7 +114,7 @@ alias pdfe='read_pdf_with_evince -e'
 sha256() {
     sha256sum=$(echo -n $@ | sha256sum)
     echo ${sha256sum::64}
-    echo -n ${sha256sum::64} | xclip -selection clipboard
+    echo -n ${sha256sum::64} | wl-copy 
 }
 
 #I hate forgetting sudo
@@ -163,26 +163,7 @@ reboot-to-windows () {
     sudo grub-reboot "$windows_title" && sudo reboot
 }
 
-jb-faketime () {
-    faketime '2024-9-24 08:15:42' "$@"
-}
-
-clion-faketime () {
-    jb-faketime /opt/clion/bin/clion.sh
-}
-
-goland-faketime () {
-    jb-faketime goland
-}
-
-idea-faketime () {
-    jb-faketime intellij-idea-ultimate-edition
-}
-
-
 [ -f "/home/postmodernist1488/.ghcup/env" ] && source "/home/postmodernist1488/.ghcup/env" # ghcup-env
-
-eval "$(zoxide init bash)"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

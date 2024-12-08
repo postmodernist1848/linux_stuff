@@ -11,7 +11,7 @@ order += "memory"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "disk /"
-order += "disk /home"
+#order += "disk /home"
 order += "ethernet enp2s0"
 order += "wireless wlan0"
 order += "volume master"
@@ -20,41 +20,41 @@ order += "tztime local"
 
 memory {
 		separator = false
-        format = "<span background='#f59335'>  %used </span>"
+        format = "<span background='#f59335'> RAM %used </span>"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
 }
 
 cpu_usage {
-        format = "<span background='#f59335'>  %usage </span>"
+        format = "<span background='#f59335'> CPU %usage </span>"
 }
 
 cpu_temperature 0 {
-        format = "<span background='#bf616a'>  %degrees °C </span>"
+        format = "<span background='#bf616a'> TEMP %degrees °C </span>"
         path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
 disk "/" {
-        format = "<span background='#fec7cd'>  %free Free </span>"
+        format = "<span background='#fec7cd'> DISK %free Free </span>"
 }
 
 disk "/home" {
-        format = "<span background='#a1d569'>  %free Free </span>"
+        format = "<span background='#a1d569'> HOME %free Free </span>"
 }
 
 ethernet enp2s0 {
-        format_up = "<span background='#88c0d0'>  %speed </span>"
-        format_down = "<span background='#88c0d0'>  Disconnected </span>"
+        format_up = "<span background='#88c0d0'> ETH %speed </span>"
+        format_down = "<span background='#88c0d0'> ETH Disconnected </span>"
 }
 
 wireless wlan0 {
-        format_up = "<span background='#b48ead'>  %essid: %quality </span>"
-        format_down = "<span background='#b48ead'>  Disconnected </span>"
+        format_up = "<span background='#b48ead'> WI-FI %essid: %quality </span>"
+        format_down = "<span background='#b48ead'> WI-FI Disconnected </span>"
 }
 
 volume master {
-        format = "<span background='#ebcb8b'>  %volume </span>"
-        format_muted = "<span background='#ebcb8b'>  Muted </span>"
+        format = "<span background='#ebcb8b'> VOL  %volume </span>"
+        format_muted = "<span background='#ebcb8b'> VOL Muted </span>"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
@@ -62,7 +62,7 @@ volume master {
 
 battery all {
 	last_full_capacity = true
-        format = "<span background='#a3be8c'>  %status %percentage %remaining </span>"
+        format = "<span background='#a3be8c'> %status %percentage %remaining </span>"
         format_down = "No Battery"
         status_chr = "Charging"
         status_bat = "Battery"
@@ -73,6 +73,6 @@ battery all {
 }
 
 tztime local {
-		format = "<span background='#81a1c1'>  %a %-d %b %H:%M </span>                                                                                                  "
+		format = "<span background='#81a1c1'> %a %-d %b %H:%M </span>                                                                                           "
 }
 
