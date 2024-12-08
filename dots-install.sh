@@ -20,7 +20,7 @@ for src in $(find $LINUX_STUFF/files -type f); do
     target=${src#"$LINUX_STUFF/files"}
 
     SUDO=""
-    if [[ "$target" != "$LINUX_STUFF/files/$HOME"* ]]; then
+    if [[ "$target" != "$HOME"* ]]; then
         SUDO="sudo"
     fi
 
