@@ -1,8 +1,8 @@
 #/usr/bin/bash
 set -euo pipefail
 
-samefile () {
-    [ -e $1 ] && [ -e $2 ] && [ "$(stat -c '%i' "$1")" = "$(stat -c '%i' "$2")" ]
+links_to () {
+    [ "$(readlink $1)" -eq $2 ]
 }
 
 LINUX_STUFF="$HOME/linux_stuff"
@@ -22,22 +22,22 @@ for src in $(find $LINUX_STUFF/files -type f); do
     SUDO=""
     if [[ "$target" != "$HOME"* ]]; then
         SUDO="sudo"
+        echo "warning: symlinking $target with sudo"
     fi
 
-    if samefile "$src" "$target"; then
+    if links_to "$target" "$src"; then
         echo "$target already linked. Skipping..."
     elif [ -e "$target" ]; then
         read -p "File $target exists. Replace, skip or back up? (y/s/b)" resp
-
         case $resp in
-            [Yy]* ) $SUDO ln -vf "$src" "$target"
+            [Yy]* ) $SUDO ln -svf "$src" "$target"
                 ;;
-            [Bb]* ) $SUDO ln -vf "$target" "$src"
+            [Bb]* ) cp -T "$target" "$src" && $SUDO ln -svf "$src" "$target"
                 ;;
             * ) echo "Skipping $target..."
                 ;;
         esac
     else
-        $SUDO mkdir -p $(dirname "$target") && $SUDO ln -v "$src" "$target"
+        $SUDO mkdir -p $(dirname "$target") && $SUDO ln -sv "$src" "$target"
     fi
 done
