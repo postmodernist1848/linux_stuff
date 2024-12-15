@@ -1,7 +1,7 @@
 set -euo pipefail
 
-src=$(realpath "$@")
-target="$HOME/linux_stuff/files$src"
+target=$(realpath "$@")
+src="$HOME/linux_stuff/files$target"
 
-mkdir -p $(dirname "$target")
-ln -v "$src" "$target"
+mkdir -p $(dirname "$src")
+cp -T "$target" "$src" && ln -svf "$src" "$target"
