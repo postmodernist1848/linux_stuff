@@ -2,7 +2,7 @@
 set -euo pipefail
 
 links_to () {
-    [ "$(readlink $1)" -eq $2 ]
+    [ "$(readlink $1)" = "$2" ]
 }
 
 LINUX_STUFF="$HOME/linux_stuff"
