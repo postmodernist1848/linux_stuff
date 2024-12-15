@@ -12,9 +12,6 @@ floating_modifier $super
 exec nm-applet
 exec mako
 
-# TODO: waybg
-#exec_always --no-startup-id "feh --no-fehbg --bg-fill --randomize  ~/Pictures/wallpapers/*"
-
 # start a terminal
 bindsym $super+Return exec alacritty
 
@@ -188,11 +185,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 #bindsym XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh devonoff
 #bindsym Shift+XF86TouchpadToggle exec --no-startup-id ~/.config/i3/touchpad-on_off.sh taponoff
 
-# start flameshot
-exec --no-startup-id flameshot
-
 # start gnome-polkit
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Autoclicker
 # bindsym F9 exec --no-startup-id xdotool click --repeat 100000 --delay 20000 1
