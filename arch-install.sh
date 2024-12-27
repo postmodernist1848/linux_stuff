@@ -15,9 +15,6 @@ echo "changing GRUB to 1920x1080 mode"
 sudo sed -i 's/GRUB_GFXMODE=auto/GRUB_GFXMODE=1920x1080,auto/' /etc/default/grub
 sudo update-grub
 
-# use alacritty as the terminal in nemo
-gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
-
 echo "Installing yay"
 sudo pacman -S --needed --noconfirm base-devel git
 git clone https://aur.archlinux.org/yay.git
@@ -26,3 +23,5 @@ makepkg -si
 cd ..
 rm -rf yay
 
+# use alacritty as the terminal in nemo
+gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
