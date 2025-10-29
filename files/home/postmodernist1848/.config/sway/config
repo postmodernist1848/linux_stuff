@@ -33,7 +33,7 @@ bindsym Print exec grim -t ppm - | satty --filename -
 
 bindsym $super+Shift+Escape exec --no-startup-id swaylock -i /home/postmodernist1848/Pictures/wallpapers/w_pink.jpg
 
-bindsym --to-code $super+b exec firefox
+bindsym --to-code $super+b exec zen-browser
 bindsym --to-code $super+Shift+f exec nemo
 bindsym --to-code $super+c exec code
 
@@ -197,14 +197,16 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # or input <identifier>
 
 input "type:keyboard" {
-    xkb_model pc105
     xkb_layout us,ru
-    xkb_options grp:alt_shift_toggle,caps:escape
+    xkb_options grp:rctrl_toggle,caps:escape
 }
 
 input "type:touchpad" {
     natural_scroll enabled
+    dwt disabled
 }
+
+exec batsignal -b
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
@@ -220,4 +222,5 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 seat seat0 xcursor_theme Bibata-Modern-Ice
 
 set $wallpapers_path $HOME/Pictures/wallpapers/
-output * bg `find $wallpapers_path -type f | shuf -n 1` fill
+#output * bg `find $wallpapers_path -type f | shuf -n 1` fill
+output * bg $wallpapers_path/ihtus2000.jpg stretch

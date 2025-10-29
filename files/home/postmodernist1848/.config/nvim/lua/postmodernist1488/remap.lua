@@ -35,4 +35,4 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 -- set env variable with additional arguments
 vim.keymap.set("n", "<F6>", ":let $SESSION_ARGS=\"\"<Left>")
 -- run run.sh with f5
-vim.keymap.set("n", "<F5>", ":w<CR>:split term://run.sh %:p $SESSION_ARGS<CR>")
+vim.keymap.set("n", "<F5>", ":w<CR>:split term://run.sh '%:p' $SESSION_ARGS<CR>")

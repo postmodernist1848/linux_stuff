@@ -17,7 +17,7 @@ if [ $# -lt 1 ]; then
 echo "Error: not enough arguments." > /dev/stderr
 exit 1
 else
-    filepath=$1
+    filepath="$1"
     filename=$(basename -- "$1")
     extension="${filename##*.}"
     exe="${filename%.*}"
@@ -35,7 +35,7 @@ else
     # printargs "${compilation_args[@]}"
     # printargs "${runtime_args[@]}"
 
-    case $extension in
+    case "$extension" in
         py)
             time python "$filepath" "${compilation_args[@]}" -- "${runtime_args[@]}"
             exit $?
