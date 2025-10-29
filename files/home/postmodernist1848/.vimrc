@@ -14,7 +14,7 @@ set smartindent
 
 set background=dark 
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " netrw settings
 let g:netrw_banner = 0
